@@ -1,22 +1,990 @@
+
+Estoy pensando en unLibreto de Boda o Programa de Mano. En donde quiero incluir aspectos de la ceremonia / misa, lecturas y/o canciones (por un lado) por otro, dejar algun codigo QR que lleve a una pagina web con toda la info del matrimonio (leturas de la misa, canciones, mesas de los invitaods, link para cargar fotos /carpeta drive), ETC... como podria crear esa pagina web
+
+18 abr
+Qué buena idea, José. El libreto + página web es una combinación perfecta para una boda de ese tamaño. Te explico cómo estructurarlo y luego te muestro el mapa de lo que construirías.
+
+La estrategia tiene dos partes separadas pero conectadas por un QR:
+
+1. El libreto físico (programa de mano) — impreso, breve, con el orden de la misa, un par de lecturas clave, y el QR al pie.
+
+2. La página web — un sitio estático y elegante que sirve como "hub" digital del matrimonio. La buena noticia: no necesitas saber programar. Puedes hacerlo en varias herramientas, de menor a mayor control:
+
+Notion (más fácil) — publicas una página como sitio web, pones links y texto. Funcional pero con estética limitada.
+Linktree / Beacons — ideal si solo necesitas un hub de links. Sin diseño personalizado.
+Framer / Webflow (intermedio) — sitio real, diseño propio, gratis para un dominio de su plataforma. Buena opción para ti dado que ya trabajas con Webflow.
+HTML estático hosteado en GitHub Pages o Netlify (más control) — un archivo HTML que yo te puedo construir, y subes gratis a GitHub Pages. Funciona perfecto para esto.
+Mi recomendación para tu caso: HTML estático en GitHub Pages. Razones: (1) gratis, (2) URL limpia como coti-nacho-2026.github.io, (3) puedo construirte el sitio completo con el diseño que quieran, (4) el QR apunta directo a esa URL.
+
+Aquí el mapa de lo que tendría el sitio:
+
+V
+
+Conectando a visualize...
+Pasos concretos para empezar:
+
+Definir el contenido — lecturas, orden de misa, canciones, listado de mesas. Eso lo vamos armando juntos.
+Elegir la plataforma — mi recomendación es HTML en GitHub Pages, y puedo construirte el sitio completo.
+Generar el QR — una vez tengas la URL, con qr-code-generator.com en 2 minutos.
+Diseñar el libreto — puede ser un PDF en Canva o Word, con el QR al pie.
+¿Quieres que empiece a construir la página web? Si me pasas: (a) los colores o estética que quieren, (b) las secciones prioritarias, y (c) cualquier texto inicial, puedo generarte el HTML completo del sitio esta semana.
+
+Acá tienes la info para crear la pagina web HTML estático en GitHub Pages.: https://www.notion.so/P-gina-Web-347b219e3e6d80b980adcdda5128ab4d?source=copy_link
+
+12:15 a. m.
+Perfecto, voy a leer la página de Notion que compartiste.
+
+
+Herramientas cargadas, usó la integración de Notion
+Herramientas cargadas, usó la integración de Notion
+Listo, leí todo. Tengo el contenido que definiste:
+
+Lo que encontré en tu Notion:
+
+Paleta: 
+#3b7ca8 (azul medio), 
+#65b8d7 (celeste), 
+#143b6b (azul profundo) — muy bonita, tonos marinos/ceremoniales
+7 fotos suyas (de Coti y tuyas)
+Secciones definidas: Misa, Fiesta, Fotos, Regalos (con transferencias para gastos matrimonio, casa nueva, viaje a Roma para recibir la bendición del Papa)
+Un comentario antes de construir: Enfocar los regalos en los tres destinos que mencionan es una decisión elegante y coherente con ustedes (el viaje a Roma es particularmente significativo dada tu fe). Solo te sugeriría pensar si quieren (a) una cuenta única con las tres causas como narrativa, o (b) tres opciones separadas donde el invitado elige. La opción (a) es más simple operacionalmente; la (b) genera más vinculación emocional con el regalo pero complica la contabilidad. Mi recomendación sería (a) con texto explicativo claro.
+
+Secciones adicionales que sugiero agregar (me pediste que sugiera):
+
+Countdown / Cuenta regresiva — detalle visual que genera expectativa
+Nuestra historia — breve narrativa de cómo se conocieron (muy apreciado por invitados)
+Cronograma del día — hora de ceremonia, cocktail, cena, fiesta (clave para invitados de regiones)
+Dress code — imprescindible y suele faltar
+Alojamiento sugerido — si hay invitados de fuera de Santiago
+Preguntas frecuentes — niños sí/no, estacionamiento, llegar tarde, etc.
+Libro de firmas digital / dedicatorias — Google Form simple donde dejan mensaje
+Confirmación de asistencia (RSVP) — aunque quizá ya lo tengan por otro canal
+Antes de generar el HTML completo, necesito algunos datos clave. Te los pregunto todos juntos para avanzar rápido:
+
+Mientras respondes, te dejo avanzando un primer esqueleto HTML con los datos que ya tengo: la paleta de Notion, las secciones base, y estructura pensada para GitHub Pages. Así ves cómo se verá y vamos ajustando sobre algo concreto.
+
+
+Ejecutó un comando, creó un archivo, archivo leído
+Ejecutó un comando, creó un archivo, archivo leído
+Te dejo el primer esqueleto funcional del sitio. Ábrelo en un navegador para ver cómo se ve. Qué incluye:
+
+Paleta exacta de Notion (
+#3b7ca8, 
+#65b8d7, 
+#143b6b) aplicada coherentemente
+Hero con tipografía serif (Cormorant Garamond) y una cita de Rut 1,16 como placeholder — reemplazable por el versículo que elijan
+Countdown en vivo hacia la fecha (tienes que ajustar la fecha exacta en el script)
+Orden completo de la misa con bloques editables para cada lectura, salmo, y canción
+Cronograma de la fiesta en formato timeline
+Buscador de mesas funcional — los invitados escriben su nombre y les aparece su mesa (hay que poblar el objeto invitados con los datos reales)
+Fotos con CTA a Google Drive
+Regalos con las tres causas narradas y datos de transferencia
+Cómo subirlo a GitHub Pages (pasos cuando esté listo):
+
+Crear cuenta en github.com (si no tienes)
+Crear un repositorio público llamado coti-y-nacho (o lo que elijan)
+Subir el archivo index.html
+En Settings → Pages → activar Pages sobre la rama main
+En 2 minutos tendrán la URL: https://[usuario].github.io/coti-y-nacho/
+Generar QR en qr-code-generator.com apuntando a esa URL
+Lo que falta y necesito de ti para avanzar:
+
+Respuestas a las tres preguntas de arriba (secciones extra, formato regalos, tipografía)
+Fecha exacta del matrimonio (día, mes, hora)
+Las fotos — si quieres, baja las 7 de Notion y me las subes acá para incorporarlas como galería/fondos
+Contenido de la misa — qué lecturas, qué canciones, qué salmo
+Listado de invitados con número de mesa (Excel o CSV funciona perfecto)
+Datos de transferencia reales (o si prefieres dejarlos fuera de la web y entregarlos por otro canal)
+Dirección de la iglesia y del salón para el cronograma y el link a Maps
+Avanzamos por tramos — con los primeros 3 o 4 datos ya dejamos el sitio casi listo para publicar.
+
+
+Index
+Código · HTML 
+P: ¿Qué secciones adicionales quieres incluir además de Misa, Fiesta, Fotos y Regalos? (Seleccione todas las que correspondan)
+R: Nuestra historia, Cronograma del día, Dress code, Alojamiento, Preguntas frecuentes, Dedicatorias / libro digital, Countdown
+
+P: Para la sección de Regalos, ¿prefieres una cuenta única con las tres causas explicadas, o tres opciones separadas?
+R: Cuenta única con narrativa
+
+P: ¿Qué tipografía prefieres para el tono general?
+R: Mezcla serif + sans para contraste
+
+Mostrar más
+12:19 a. m.
+Perfecto. Con esas respuestas voy a construir la versión 2: más secciones, tipografías mezcladas (Cormorant Garamond serif + Inter sans), y regalos como cuenta única con narrativa.
+
+
+Se crearon 2 archivos, se ejecutaron 2 comandos
+Se crearon 2 archivos, se ejecutaron 2 comandos
+Ahora te armo también una guía de deployment paso a paso y un checklist de contenido para que tengas todo organizado:
+
+
+Creó un archivo, archivo leído
+Creó un archivo, archivo leído
+Listo. Te dejo dos archivos:
+
+1. index.html — La V2 completa del sitio con todas las secciones que pediste: Nuestra historia, Countdown, Misa, Cronograma, Dress code, Mesas (con buscador), Alojamiento, Fotos, Dedicatorias, Regalos (narrativa única + 3 causas), y FAQ. Todo con tu paleta exacta y mezcla serif/sans (Cormorant Garamond para titulares emocionales, Inter para UI y datos).
+
+2. GUIA-deployment-y-checklist.md — Todo lo que necesitas para publicarlo: dos rutas de hosting (Netlify Drop es la más rápida, 30 segundos literalmente), cómo generar el QR con los colores de la paleta, y un checklist completo de contenido pendiente organizado por sección.
+
+Tres puntos donde me permito pushback antes de que sigas:
+
+Sobre los datos de transferencia públicos — exponerlos en una web pública tiene riesgo bajo pero no cero (se indexan en Google, quedan expuestos a scraping). Piénsalo bien. Mi recomendación sería tener una cuenta específica solo para esto, o usar un botón que abra WhatsApp donde los invitados piden los datos.
+Sobre el buscador de mesas — lo hice funcional pero expone el listado de invitados en el HTML (basta inspeccionar el código). Para una boda esto rara vez importa, pero si les incomoda que un invitado pueda ver a quiénes más invitaron, una alternativa es que cada invitado reciba su mesa por WhatsApp personalizado. Lo menciono porque es un detalle que mucha gente no considera.
+Sobre el respaldo físico — el QR es elegante pero no puede ser la única forma de acceso a la información crítica (hora, dirección). Los abuelos, invitados mayores, o gente sin datos móviles quedan fuera. El libreto impreso debe tener lo mínimo indispensable aunque no tenga todo.
+¿Quieres que avance con alguna de estas tres cosas?
+
+(a) Diseñar el libreto físico en Canva que haga juego con la web
+(b) Ajustar alguna sección específica de la web con contenido real
+(c) Procesar un Excel de invitados si me lo compartes, para generar el listado JS del buscador de mesas
+
+Index
+Código · HTML 
+
+Guia deployment y checklist
+Documento · MD 
+Modica a "José & Coti"
+
+12:27 a. m.
+Hago el cambio en el HTML — todas las referencias de "Coti & Nacho" a "José & Coti":
+
+
+Editó 3 archivos, archivo visualizado, ejecutó un comando
+Editó 3 archivos, archivo visualizado, ejecutó un comando
+Listo. Cambié las 4 ocurrencias: título del tab, meta description, el hero, y el footer. Todo dice "José & Coti" ahora.
+
+
+Index
+Código · HTML 
+Como la puedo publicar ahora?
+
+12:29 a. m.
+La opción más rápida, sin necesidad de crear cuenta ni instalar nada, es Netlify Drop — literalmente 30 segundos:
+
+Pasos:
+
+Abre app.netlify.com/drop en tu navegador
+Arrastra el archivo index.html que descargaste a la zona que dice "drag and drop"
+Netlify te da una URL automática como https://jose-coti-abc123.netlify.app
+Listo — el sitio está en línea
+Para personalizar la URL (ej: jose-y-coti.netlify.app):
+
+Crea una cuenta gratuita en Netlify
+En el panel de tu sitio → Site settings → Change site name
+Puedes dejarla así o conectar un dominio propio después
+Para el QR:
+
+Una vez tengas la URL, entra a qrcode-monkey.com
+Pega la URL, elige el color 
+#143b6b (el azul profundo de la paleta) para que haga juego con el libreto
+Descarga en SVG para que se vea nítido al imprimir
+Un detalle importante: cada vez que quieras actualizar el sitio (agregar las lecturas, el listado de mesas, etc.), tendrás que volver a Netlify Drop y arrastrar el archivo de nuevo. Si en algún momento eso se vuelve incómodo, creamos una cuenta de GitHub y configuramos el sitio desde ahí — que permite actualizar con un solo clic desde el computador.
+
+¿Ya tienes el archivo descargado en tu computador?
+
+https://github.com/j-torrealba/matrimonio Ya tengo Github, ayudame como hago para pdoer trabajar y editar desde ahí
+
+12:42 a. m.
+Perfecto, ya tienes el repositorio creado. Hay dos formas de trabajar desde ahí — te explico las dos y eliges según tu comodidad:
+
+Opción A — Directamente desde GitHub.com (sin instalar nada)
+
+Es la más simple para editar el HTML desde el navegador:
+
+Ve a github.com/j-torrealba/matrimonio
+Haz clic en "Add file" → "Upload files"
+Arrastra el index.html que descargaste
+Abajo escribe un mensaje como "primer deploy" y haz clic en "Commit changes"
+Ve a Settings → Pages (en el menú lateral izquierdo)
+En "Branch" selecciona main, carpeta / (root) → Save
+En 1-2 minutos tu sitio estará en: https://j-torrealba.github.io/matrimonio/
+Para editar después: entras al repositorio, haces clic en index.html, luego en el ícono del lápiz ✏️ arriba a la derecha, editas directamente en el navegador, y "Commit changes". El sitio se actualiza solo en segundos.
+
+Opción B — GitHub Desktop (más cómodo para ediciones frecuentes)
+
+Si vas a editar el sitio seguido (agregar mesas, lecturas, etc.), esto es más fluido:
+
+Descarga GitHub Desktop
+Inicia sesión con tu cuenta j-torrealba
+File → Clone repository → j-torrealba/matrimonio → elige una carpeta en tu computador
+Copia el index.html dentro de esa carpeta
+En GitHub Desktop verás el archivo como "cambio nuevo" → escribe un mensaje → Commit to main → Push origin
+Activa GitHub Pages igual que en el paso 5-6 de arriba
+Para editar después: abres el index.html con cualquier editor de texto (hasta el Bloc de notas funciona, pero VS Code es mucho mejor), guardas, y en GitHub Desktop haces Commit + Push. Listo.
+
+Mi recomendación para ti: empieza con la Opción A para publicar ahora mismo (2 minutos), y si después ves que editas seguido, instalas GitHub Desktop. Para el contenido de mesas que viene (350 invitados), un editor de texto local va a ser mucho más cómodo que el editor del navegador.
+
+¿Quieres que te ayude a activar GitHub Pages una vez que subas el archivo?
+
+1776570967314_image.png
+Como hago para publicar la pagina web?
+
+12:56 a. m.
+Veo que ya tienes el archivo subido en GitHub, pero es el HTML básico que creó GitHub automáticamente, no el nuestro. Hay que reemplazarlo.
+
+Pasos para publicar:
+
+1. Reemplazar el index.html
+
+En la página del archivo en GitHub, haz clic en el ícono del lápiz ✏️ (arriba a la derecha del código)
+Selecciona todo el texto (Ctrl+A / Cmd+A)
+Bórralo todo
+Abre el index.html que descargaste, copia todo su contenido (Ctrl+A → Ctrl+C)
+Pégalo en el editor de GitHub
+Abajo escribe un mensaje como "agregar sitio matrimonio" → clic en "Commit changes"
+2. Activar GitHub Pages
+
+Ve a la pestaña Settings del repositorio (barra superior)
+En el menú lateral izquierdo busca Pages
+En "Branch" selecciona main, carpeta / (root)
+Clic en Save
+3. Esperar 1-2 minutos
+
+Tu sitio quedará en: https://j-torrealba.github.io/matrimonio/
+
+Un atajo más fácil para el paso 1: en vez del editor de GitHub, puedes hacer clic en los tres puntos ··· que se ven en tu pantalla arriba a la derecha → "Delete file", y después subir directamente el index.html nuevo con "Add file → Upload files". Es más limpio que copiar y pegar.
+
+¿Ya tienes el index.html descargado en tu computador?
+
+Puedes hacerlo tu?
+
+12:57 a. m.
+No puedo hacer cambios directamente en GitHub desde acá, pero puedo hacer algo casi igual de útil: actualizar el HTML directamente en tu Notion para que lo tengas guardado ahí, y desde Notion lo copias y pegas en GitHub con un solo paso.
+
+Pero la forma más rápida es esta — te la explico con tu pantalla exacta:
+
+En la pantalla que ves ahora mismo:
+
+Haz clic en el ícono del lápiz ✏️ — está arriba a la derecha del código, justo al lado de donde dice "Blame"
+Se abre el editor. Haz Ctrl+A para seleccionar todo el código actual
+Bórralo con Delete o Backspace
+Abre el archivo index.html que descargaste → Ctrl+A → Ctrl+C
+Vuelve a GitHub y pega con Ctrl+V
+Abajo escribe "agregar sitio matrimonio" → clic en "Commit changes"
+Luego para activar Pages:
+
+Clic en Settings → Pages (menú izquierdo) → Branch: main → Save
+¿Tienes el index.html descargado en tu computador? Si no lo encontrás, dime y te lo vuelvo a generar para que lo descargues de nuevo.
+
+
+
+
+
+
+Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respuestas.
+Index · HTML
+Copiar
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José & Coti · Junio 2026</title>
+<meta name="description" content="Matrimonio de José y Coti — Junio 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-medio: #3b7ca8;
+    --celeste: #65b8d7;
+    --azul-profundo: #143b6b;
+    --azul-muy-claro: #eaf3f9;
+    --crema: #faf7f2;
+    --crema-oscuro: #f0ebe2;
+    --blanco: #ffffff;
+    --texto: #1f2937;
+    --texto-suave: #5b6472;
+    --borde: rgba(20, 59, 107, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    color: var(--texto);
+    background: var(--crema);
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    position: sticky; top: 0;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--borde);
+    z-index: 100; padding: 14px 20px;
+  }
+  nav ul {
+    list-style: none; display: flex;
+    justify-content: center; gap: 24px;
+    flex-wrap: wrap; font-family: var(--sans);
+    font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 400;
+  }
+  nav a { color: var(--azul-profundo); text-decoration: none; transition: opacity 0.2s; }
+  nav a:hover { opacity: 0.55; }
+ 
+  .hero {
+    min-height: 92vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 80px 24px;
+    background: linear-gradient(180deg, var(--crema) 0%, var(--crema-oscuro) 100%);
+  }
+  .hero .pre-title {
+    font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--azul-medio); margin-bottom: 24px;
+  }
+  .hero .ampersand {
+    font-family: var(--serif); font-size: 120px;
+    color: var(--azul-medio); font-style: italic;
+    font-weight: 300; line-height: 0.8; margin: 12px 0;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(52px, 10vw, 110px);
+    font-weight: 400; color: var(--azul-profundo);
+    letter-spacing: 0.02em; line-height: 1;
+  }
+  .hero .date {
+    font-family: var(--sans); font-size: 12px;
+    letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--texto-suave); margin-top: 36px;
+  }
+  .hero .divider { width: 60px; height: 1px; background: var(--azul-medio); margin: 28px 0; }
+  .hero .verse {
+    font-family: var(--serif); font-style: italic;
+    font-size: 22px; color: var(--texto-suave);
+    max-width: 520px; line-height: 1.5;
+  }
+  .hero .verse-ref {
+    display: block; font-family: var(--sans);
+    font-style: normal; font-size: 11px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--azul-medio); margin-top: 12px;
+  }
+ 
+  .countdown {
+    background: var(--blanco); padding: 44px 24px;
+    text-align: center; border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+  }
+  .countdown-label {
+    font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--azul-medio); margin-bottom: 24px;
+  }
+  .countdown-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px; max-width: 500px; margin: 0 auto;
+  }
+  .countdown-item .num {
+    font-family: var(--serif); font-size: 48px;
+    font-weight: 400; color: var(--azul-profundo); line-height: 1;
+  }
+  .countdown-item .label {
+    font-family: var(--sans); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--texto-suave); margin-top: 6px;
+  }
+ 
+  section { padding: 96px 24px; max-width: 820px; margin: 0 auto; }
+  section.narrow { max-width: 680px; }
+  section h2 {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 400; color: var(--azul-profundo);
+    text-align: center; margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+  section .subtitle {
+    font-family: var(--sans); text-align: center;
+    font-size: 11px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--azul-medio);
+    margin-bottom: 16px; font-weight: 400;
+  }
+  section .divider-small {
+    width: 40px; height: 1px;
+    background: var(--celeste); margin: 0 auto 48px;
+  }
+ 
+  .historia {
+    font-family: var(--serif); font-size: 20px;
+    line-height: 1.7; color: var(--texto);
+    text-align: center; font-weight: 400;
+  }
+  .historia p { margin-bottom: 20px; }
+  .historia p:first-letter {
+    font-size: 48px; float: left; line-height: 1;
+    margin-right: 8px; color: var(--azul-medio); font-weight: 500;
+  }
+ 
+  .misa-orden { display: grid; gap: 16px; }
+  .misa-item {
+    background: var(--blanco); padding: 22px 28px;
+    border-left: 3px solid var(--celeste);
+    border-radius: 0 8px 8px 0;
+  }
+  .misa-item h3 {
+    font-family: var(--serif); font-size: 22px;
+    font-weight: 500; color: var(--azul-profundo); margin-bottom: 6px;
+  }
+  .misa-item .cita {
+    font-family: var(--serif); font-style: italic;
+    font-size: 16px; color: var(--azul-medio); margin-bottom: 8px;
+  }
+  .misa-item p.texto {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--texto-suave); line-height: 1.6;
+  }
+ 
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 1px; background: var(--celeste);
+  }
+  .timeline-item { position: relative; margin-bottom: 32px; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: ''; position: absolute;
+    left: -37px; top: 10px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--azul-medio); border: 2px solid var(--crema);
+  }
+  .timeline-time {
+    font-family: var(--serif); font-size: 24px;
+    color: var(--azul-profundo); font-weight: 500; line-height: 1.2;
+  }
+  .timeline-title {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--texto); font-weight: 500;
+    margin: 2px 0 4px; letter-spacing: 0.02em;
+  }
+  .timeline-desc { font-family: var(--sans); font-size: 13px; color: var(--texto-suave); }
+ 
+  .dress-code {
+    background: var(--blanco); padding: 48px 40px;
+    border-radius: 12px; text-align: center;
+    border: 1px solid var(--borde);
+  }
+  .dress-code-title {
+    font-family: var(--serif); font-size: 32px;
+    font-weight: 400; color: var(--azul-profundo);
+    margin-bottom: 12px; font-style: italic;
+  }
+  .dress-code-desc {
+    font-family: var(--sans); font-size: 15px;
+    color: var(--texto-suave); max-width: 480px;
+    margin: 0 auto 24px;
+  }
+  .dress-code-swatches { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
+  .swatch {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--borde);
+  }
+  .dress-code-nota {
+    font-family: var(--serif); font-style: italic;
+    font-size: 15px; color: var(--texto-suave); margin-top: 24px;
+  }
+ 
+  .mesas-buscador {
+    background: var(--blanco); padding: 36px 32px;
+    border-radius: 12px; border: 1px solid var(--borde); text-align: center;
+  }
+  .mesas-buscador input {
+    width: 100%; max-width: 420px;
+    padding: 14px 20px; font-size: 16px;
+    font-family: var(--sans); border: 1px solid var(--borde);
+    border-radius: 8px; background: var(--crema);
+    outline: none; transition: border-color 0.2s; color: var(--texto);
+  }
+  .mesas-buscador input:focus { border-color: var(--azul-medio); }
+  .mesa-resultado {
+    margin-top: 24px; font-family: var(--serif);
+    font-size: 22px; color: var(--azul-profundo);
+    min-height: 32px; font-style: italic;
+  }
+  .mesa-resultado .mesa-num {
+    font-weight: 500; color: var(--azul-medio);
+    font-size: 32px; font-style: normal;
+  }
+  .mesa-resultado .no-encontrado {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--texto-suave); font-style: normal;
+  }
+ 
+  .alojamientos {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .alojamiento-card {
+    background: var(--blanco); padding: 24px;
+    border-radius: 10px; border: 1px solid var(--borde);
+  }
+  .alojamiento-card h3 {
+    font-family: var(--serif); font-size: 22px;
+    color: var(--azul-profundo); font-weight: 500; margin-bottom: 6px;
+  }
+  .alojamiento-card .distancia {
+    font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--azul-medio); margin-bottom: 12px;
+  }
+  .alojamiento-card p {
+    font-family: var(--sans); font-size: 13px;
+    color: var(--texto-suave); margin-bottom: 14px; line-height: 1.6;
+  }
+  .alojamiento-card a {
+    font-family: var(--sans); font-size: 12px;
+    color: var(--azul-medio); text-decoration: none;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .alojamiento-card a:hover { text-decoration: underline; }
+ 
+  .fotos-cta {
+    text-align: center; background: var(--blanco);
+    padding: 48px 32px; border-radius: 12px;
+    border: 1px solid var(--borde);
+  }
+  .fotos-cta .icono {
+    font-family: var(--serif); font-size: 56px;
+    color: var(--celeste); font-style: italic; line-height: 1;
+  }
+  .fotos-cta p {
+    margin: 16px auto 28px; font-family: var(--serif);
+    font-size: 20px; font-style: italic;
+    color: var(--texto-suave); max-width: 480px; line-height: 1.5;
+  }
+ 
+  .dedicatoria-cta {
+    background: linear-gradient(135deg, var(--azul-muy-claro) 0%, var(--crema) 100%);
+    padding: 48px 32px; border-radius: 12px;
+    text-align: center; border: 1px solid var(--borde);
+  }
+  .dedicatoria-cta p {
+    font-family: var(--serif); font-style: italic;
+    font-size: 22px; color: var(--texto);
+    max-width: 520px; margin: 0 auto 28px; line-height: 1.5;
+  }
+ 
+  .regalos-intro {
+    text-align: center; font-family: var(--serif);
+    font-style: italic; font-size: 22px;
+    color: var(--texto); max-width: 640px;
+    margin: 0 auto 16px; line-height: 1.5;
+  }
+  .regalos-narrativa {
+    font-family: var(--sans); font-size: 15px;
+    color: var(--texto-suave); text-align: center;
+    max-width: 620px; margin: 0 auto 40px; line-height: 1.7;
+  }
+  .regalos-causas {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-bottom: 40px;
+  }
+  .causa-mini {
+    text-align: center; padding: 20px 16px;
+    background: var(--blanco); border-radius: 10px;
+    border: 1px solid var(--borde);
+  }
+  .causa-mini .numero {
+    font-family: var(--serif); font-size: 24px;
+    font-style: italic; color: var(--azul-medio);
+    display: block; line-height: 1; margin-bottom: 8px;
+  }
+  .causa-mini h3 {
+    font-family: var(--serif); font-size: 18px;
+    color: var(--azul-profundo); font-weight: 500; margin-bottom: 6px;
+  }
+  .causa-mini p {
+    font-family: var(--sans); font-size: 12px;
+    color: var(--texto-suave); line-height: 1.5;
+  }
+  .transferencia-box {
+    background: var(--azul-profundo); color: var(--crema);
+    padding: 40px 32px; border-radius: 12px; text-align: center;
+  }
+  .transferencia-box h3 {
+    font-family: var(--serif); font-size: 28px;
+    font-weight: 400; margin-bottom: 24px; color: var(--blanco);
+  }
+  .transferencia-datos {
+    font-family: 'Courier New', monospace;
+    font-size: 14px; line-height: 2; opacity: 0.95;
+  }
+  .transferencia-datos .label-dato { color: var(--celeste); font-weight: 500; }
+  .copiar-btn {
+    margin-top: 20px; font-family: var(--sans);
+    font-size: 12px; letter-spacing: 0.15em;
+    text-transform: uppercase; background: transparent;
+    color: var(--blanco); border: 1px solid rgba(255,255,255,0.35);
+    padding: 10px 24px; border-radius: 2px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .copiar-btn:hover { background: rgba(255,255,255,0.1); }
+ 
+  .faq-item { border-bottom: 1px solid var(--borde); padding: 4px 0; }
+  .faq-item summary {
+    cursor: pointer; padding: 18px 0;
+    font-family: var(--sans); font-size: 15px;
+    font-weight: 500; color: var(--azul-profundo);
+    list-style: none; display: flex;
+    justify-content: space-between; align-items: center; outline: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-family: var(--serif);
+    font-size: 24px; color: var(--azul-medio);
+    font-weight: 300; transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item .respuesta {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--texto-suave); padding: 0 0 20px; line-height: 1.7;
+  }
+ 
+  .btn {
+    display: inline-block; padding: 13px 30px;
+    background: var(--azul-profundo); color: var(--crema);
+    text-decoration: none; font-family: var(--sans);
+    font-size: 12px; letter-spacing: 0.2em;
+    text-transform: uppercase; border-radius: 2px;
+    transition: background 0.2s, transform 0.1s;
+    border: none; cursor: pointer; font-weight: 400;
+  }
+  .btn:hover { background: var(--azul-medio); }
+  .btn:active { transform: scale(0.98); }
+  .btn-outline {
+    background: transparent; color: var(--azul-profundo);
+    border: 1px solid var(--azul-profundo);
+  }
+  .btn-outline:hover { background: var(--azul-profundo); color: var(--crema); }
+  .cta-wrap { text-align: center; margin-top: 40px; }
+ 
+  footer {
+    background: var(--azul-profundo); color: var(--crema);
+    text-align: center; padding: 64px 24px; margin-top: 80px;
+  }
+  footer .ampersand {
+    font-family: var(--serif); font-size: 56px;
+    font-style: italic; color: var(--celeste);
+    line-height: 1; margin-bottom: 12px;
+  }
+  footer p {
+    font-family: var(--serif); font-size: 18px;
+    font-style: italic; opacity: 0.88;
+  }
+  footer .fecha-footer {
+    font-family: var(--sans); font-style: normal;
+    font-size: 11px; letter-spacing: 0.3em;
+    text-transform: uppercase; opacity: 0.6; margin-top: 16px;
+  }
+ 
+  @media (max-width: 700px) {
+    nav ul { gap: 14px; font-size: 10px; letter-spacing: 0.1em; }
+    section { padding: 72px 20px; }
+    section h2 { font-size: 34px; }
+    .countdown-item .num { font-size: 34px; }
+    .transferencia-box { padding: 28px 20px; }
+    .transferencia-datos { font-size: 12px; }
+    .regalos-causas { grid-template-columns: 1fr; }
+    .dress-code { padding: 36px 24px; }
+    .historia { font-size: 18px; }
+    .hero .ampersand { font-size: 90px; }
+  }
+</style>
 </head>
 <body>
-    <h1>Welcome to Our Wedding!</h1>
-    <p>Join us as we celebrate our marriage on June 25, 2026.</p>
-    <p>Location: Beautiful Garden, City Park</p>
-    <p>Time: 3:00 PM</p>
-    <h2>Schedule</h2>
-    <ul>
-        <li>Ceremony: 3:00 PM</li>
-        <li>Reception: 4:00 PM</li>
-        <li>Dinner: 5:00 PM</li>
-    </ul>
-    <h2>RSVP</h2>
-    <p>Please let us know if you can make it!</p>
+ 
+<nav>
+  <ul>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#misa">Misa</a></li>
+    <li><a href="#fiesta">Fiesta</a></li>
+    <li><a href="#mesas">Mesas</a></li>
+    <li><a href="#fotos">Fotos</a></li>
+    <li><a href="#regalos">Regalos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+ 
+<header class="hero">
+  <div class="pre-title">Nos casamos</div>
+  <h1>José</h1>
+  <div class="ampersand">&</div>
+  <h1>Coti</h1>
+  <div class="date">Junio · 2026</div>
+  <div class="divider"></div>
+  <p class="verse">
+    "Donde tú vayas, iré yo; donde tú vivas, viviré."
+    <span class="verse-ref">Rut 1, 16</span>
+  </p>
+</header>
+ 
+<div class="countdown">
+  <div class="countdown-label">Nos vemos en</div>
+  <div class="countdown-grid">
+    <div class="countdown-item"><div class="num" id="dias">--</div><div class="label">Días</div></div>
+    <div class="countdown-item"><div class="num" id="horas">--</div><div class="label">Horas</div></div>
+    <div class="countdown-item"><div class="num" id="minutos">--</div><div class="label">Minutos</div></div>
+    <div class="countdown-item"><div class="num" id="segundos">--</div><div class="label">Seg.</div></div>
+  </div>
+</div>
+ 
+<section id="historia" class="narrow">
+  <h2>Nuestra historia</h2>
+  <div class="subtitle">Cómo llegamos hasta aquí</div>
+  <div class="divider-small"></div>
+  <div class="historia">
+    <p>[Primer párrafo: cómo se conocieron. Dónde, cuándo, qué estaban haciendo en sus vidas en ese momento.]</p>
+    <p>[Segundo párrafo: el momento en que algo cambió. La primera cita, la primera vez que supieron que esto era distinto.]</p>
+    <p>[Tercer párrafo: la propuesta de matrimonio. Cierre con algo que mire hacia adelante.]</p>
+  </div>
+</section>
+ 
+<section id="misa">
+  <h2>La Misa</h2>
+  <div class="subtitle">Ceremonia religiosa</div>
+  <div class="divider-small"></div>
+  <div class="misa-orden">
+    <div class="misa-item"><h3>Entrada</h3><p class="cita">[Canción de entrada]</p><p class="texto">Procesión de los novios y ministros.</p></div>
+    <div class="misa-item"><h3>Primera Lectura</h3><p class="cita">[Cita bíblica]</p><p class="texto">[Texto completo de la primera lectura.]</p></div>
+    <div class="misa-item"><h3>Salmo Responsorial</h3><p class="cita">[Salmo elegido]</p><p class="texto">[Estribillo del salmo.]</p></div>
+    <div class="misa-item"><h3>Segunda Lectura</h3><p class="cita">[Cita bíblica]</p><p class="texto">[Texto completo de la segunda lectura.]</p></div>
+    <div class="misa-item"><h3>Evangelio</h3><p class="cita">[Evangelio elegido]</p><p class="texto">[Texto del pasaje.]</p></div>
+    <div class="misa-item"><h3>Rito del Matrimonio</h3><p class="texto">Consentimiento, entrega de anillos y bendición de las arras.</p></div>
+    <div class="misa-item"><h3>Ofertorio</h3><p class="cita">[Canción del ofertorio]</p></div>
+    <div class="misa-item"><h3>Comunión</h3><p class="cita">[Cantos de comunión]</p></div>
+    <div class="misa-item"><h3>Salida</h3><p class="cita">[Canción de salida]</p></div>
+  </div>
+</section>
+ 
+<section id="fiesta">
+  <h2>El día</h2>
+  <div class="subtitle">Cronograma y lugar</div>
+  <div class="divider-small"></div>
+  <div class="timeline">
+    <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-title">Ceremonia religiosa</div><div class="timeline-desc">[Iglesia y dirección]</div></div>
+    <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-title">Cóctel de bienvenida</div><div class="timeline-desc">[Lugar]</div></div>
+    <div class="timeline-item"><div class="timeline-time">21:30</div><div class="timeline-title">Cena</div><div class="timeline-desc">[Salón]</div></div>
+    <div class="timeline-item"><div class="timeline-time">23:30</div><div class="timeline-title">Baile y fiesta</div><div class="timeline-desc">Hasta el amanecer</div></div>
+    <div class="timeline-item"><div class="timeline-time">05:00</div><div class="timeline-title">Cierre</div><div class="timeline-desc">Esperamos que se queden hasta el final</div></div>
+  </div>
+  <div class="cta-wrap">
+    <a href="https://maps.google.com/?q=[DIRECCION]" class="btn btn-outline" target="_blank" rel="noopener">Ver ubicación en Google Maps</a>
+  </div>
+</section>
+ 
+<section id="dress-code" class="narrow">
+  <h2>Dress code</h2>
+  <div class="subtitle">Cómo vestirse</div>
+  <div class="divider-small"></div>
+  <div class="dress-code">
+    <div class="dress-code-title">Formal elegante</div>
+    <p class="dress-code-desc">[Ajustar. Ej: Caballeros con traje oscuro. Damas con vestido largo o de cóctel. Colores sugeridos dentro de la paleta azul, crema y tonos tierra.]</p>
+    <div class="dress-code-swatches">
+      <div class="swatch" style="background: #143b6b;"></div>
+      <div class="swatch" style="background: #3b7ca8;"></div>
+      <div class="swatch" style="background: #65b8d7;"></div>
+      <div class="swatch" style="background: #faf7f2;"></div>
+    </div>
+    <p class="dress-code-nota">Por favor evitar el blanco · Reservado para la novia</p>
+  </div>
+</section>
+ 
+<section id="mesas" class="narrow">
+  <h2>Tu mesa</h2>
+  <div class="subtitle">Busca tu nombre</div>
+  <div class="divider-small"></div>
+  <div class="mesas-buscador">
+    <input type="text" id="buscador-invitado" placeholder="Escribe tu nombre..." autocomplete="off" aria-label="Buscar mesa por nombre">
+    <div class="mesa-resultado" id="resultado-mesa"></div>
+  </div>
+</section>
+ 
+<section id="alojamiento">
+  <h2>Dónde quedarse</h2>
+  <div class="subtitle">Para invitados de fuera</div>
+  <div class="divider-small"></div>
+  <div class="alojamientos">
+    <div class="alojamiento-card">
+      <h3>[Hotel 1]</h3><div class="distancia">A 5 min del salón</div>
+      <p>Opción cómoda y cercana. Tarifa referencial: $[valor] por noche.</p>
+      <a href="#" target="_blank" rel="noopener">Reservar →</a>
+    </div>
+    <div class="alojamiento-card">
+      <h3>[Hotel 2]</h3><div class="distancia">A 15 min del salón</div>
+      <p>Alternativa más económica. Tarifa referencial: $[valor] por noche.</p>
+      <a href="#" target="_blank" rel="noopener">Reservar →</a>
+    </div>
+    <div class="alojamiento-card">
+      <h3>[Hotel 3]</h3><div class="distancia">A 10 min del salón</div>
+      <p>Opción boutique. Tarifa referencial: $[valor] por noche.</p>
+      <a href="#" target="_blank" rel="noopener">Reservar →</a>
+    </div>
+  </div>
+</section>
+ 
+<section id="fotos" class="narrow">
+  <h2>Fotos</h2>
+  <div class="subtitle">Compartan con nosotros</div>
+  <div class="divider-small"></div>
+  <div class="fotos-cta">
+    <div class="icono">✦</div>
+    <p>Suban sus fotos y videos del día a nuestra carpeta compartida. Nos encantaría revivir cada momento a través de sus ojos.</p>
+    <a href="#" class="btn" target="_blank" rel="noopener">Subir fotos a Google Drive</a>
+  </div>
+</section>
+ 
+<section id="dedicatorias" class="narrow">
+  <h2>Dedicatorias</h2>
+  <div class="subtitle">Libro de firmas digital</div>
+  <div class="divider-small"></div>
+  <div class="dedicatoria-cta">
+    <p>"Déjennos unas palabras que podamos guardar. Un deseo, un recuerdo, un consejo para esta vida que empezamos."</p>
+    <a href="#" class="btn" target="_blank" rel="noopener">Dejar dedicatoria</a>
+  </div>
+</section>
+ 
+<section id="regalos">
+  <h2>Regalos</h2>
+  <div class="subtitle">Gracias por acompañarnos</div>
+  <div class="divider-small"></div>
+  <p class="regalos-intro">Su presencia en este día es el mejor regalo que podemos recibir.</p>
+  <p class="regalos-narrativa">Si quieren acompañarnos con algo más, hemos decidido que los aportes nos ayuden a construir esta nueva etapa: cubrir los gastos del matrimonio, preparar nuestra nueva casa, y emprender juntos un viaje a Roma para recibir la bendición del Papa como matrimonio.</p>
+  <div class="regalos-causas">
+    <div class="causa-mini"><span class="numero">I</span><h3>El matrimonio</h3><p>Los gastos de este día</p></div>
+    <div class="causa-mini"><span class="numero">II</span><h3>Nuestra casa</h3><p>El hogar que construiremos</p></div>
+    <div class="causa-mini"><span class="numero">III</span><h3>Roma</h3><p>La bendición del Papa</p></div>
+  </div>
+  <div class="transferencia-box">
+    <h3>Datos para transferencia</h3>
+    <div class="transferencia-datos" id="datos-transferencia">
+      <div><span class="label-dato">Nombre:</span> [Nombre completo]</div>
+      <div><span class="label-dato">RUT:</span> [12.345.678-9]</div>
+      <div><span class="label-dato">Banco:</span> [Banco]</div>
+      <div><span class="label-dato">Tipo de cuenta:</span> [Cuenta corriente]</div>
+      <div><span class="label-dato">Número:</span> [00000000]</div>
+      <div><span class="label-dato">Email:</span> [correo@correo.cl]</div>
+    </div>
+    <button class="copiar-btn" onclick="copiarDatos()">Copiar datos</button>
+  </div>
+</section>
+ 
+<section id="faq" class="narrow">
+  <h2>Preguntas frecuentes</h2>
+  <div class="subtitle">Lo que pueden querer saber</div>
+  <div class="divider-small"></div>
+  <details class="faq-item">
+    <summary>¿A qué hora debo llegar?</summary>
+    <div class="respuesta">Les pedimos llegar a la iglesia 15 minutos antes del inicio de la ceremonia, es decir a las [18:45]. La misa comienza en punto.</div>
+  </details>
+  <details class="faq-item">
+    <summary>¿Puedo llevar niños?</summary>
+    <div class="respuesta">[Ajustar según su decisión.]</div>
+  </details>
+  <details class="faq-item">
+    <summary>¿Hay estacionamiento?</summary>
+    <div class="respuesta">[Ajustar.]</div>
+  </details>
+  <details class="faq-item">
+    <summary>¿Cómo confirmo asistencia?</summary>
+    <div class="respuesta">Pueden confirmar asistencia hasta el [fecha] escribiendo a [correo] o WhatsApp [+56 9 XXXX XXXX].</div>
+  </details>
+  <details class="faq-item">
+    <summary>¿Qué regalo es más útil?</summary>
+    <div class="respuesta">Preferimos aportes por transferencia enfocados en tres destinos: matrimonio, nuestra casa, y viaje a Roma. No tenemos lista de regalos tradicional.</div>
+  </details>
+  <details class="faq-item">
+    <summary>¿La misa es en español?</summary>
+    <div class="respuesta">Sí. En esta página pueden consultar las lecturas con anticipación si desean seguirla.</div>
+  </details>
+  <details class="faq-item">
+    <summary>Soy de fuera de Santiago, ¿dónde me alojo?</summary>
+    <div class="respuesta">En "Dónde quedarse" incluimos tres opciones a distintas distancias y precios.</div>
+  </details>
+</section>
+ 
+<footer>
+  <div class="ampersand">&</div>
+  <p>Con cariño, José & Coti</p>
+  <div class="fecha-footer">Junio · 2026</div>
+</footer>
+ 
+<script>
+  // AJUSTAR: fecha exacta del matrimonio
+  const fechaBoda = new Date('2026-06-15T19:00:00').getTime();
+ 
+  function actualizarCountdown() {
+    const ahora = new Date().getTime();
+    const dif = fechaBoda - ahora;
+    const ids = ['dias', 'horas', 'minutos', 'segundos'];
+    if (dif <= 0) { ids.forEach(id => document.getElementById(id).textContent = '0'); return; }
+    const d = Math.floor(dif / (1000 * 60 * 60 * 24));
+    const h = Math.floor((dif % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((dif % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((dif % (1000 * 60)) / 1000);
+    document.getElementById('dias').textContent = d;
+    document.getElementById('horas').textContent = h;
+    document.getElementById('minutos').textContent = m;
+    document.getElementById('segundos').textContent = s;
+  }
+  actualizarCountdown();
+  setInterval(actualizarCountdown, 1000);
+ 
+  // AJUSTAR: listado completo de invitados
+  const invitados = {
+    "juan perez": 5,
+    "maria gonzalez": 3,
+    "pedro silva": 8,
+    "ana torres": 2,
+    "jose ignacio torrealba": 1,
+    "constanza": 1
+  };
+ 
+  const normalizar = (t) => t.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .trim().replace(/\s+/g, ' ');
+ 
+  const buscador = document.getElementById('buscador-invitado');
+  const resultado = document.getElementById('resultado-mesa');
+ 
+  buscador.addEventListener('input', (e) => {
+    const query = normalizar(e.target.value);
+    if (query.length < 2) { resultado.innerHTML = ''; return; }
+    const matches = Object.keys(invitados).filter(nombre => nombre.includes(query));
+    if (matches.length === 1) {
+      const nombre = matches[0];
+      const nombreCap = nombre.split(' ').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+      resultado.innerHTML = `${nombreCap}, estás en la <span class="mesa-num">mesa ${invitados[nombre]}</span>`;
+    } else if (matches.length > 1 && matches.length <= 5) {
+      resultado.innerHTML = `<span class="no-encontrado">Varias coincidencias, agrega tu apellido.</span>`;
+    } else if (matches.length === 0) {
+      resultado.innerHTML = '<span class="no-encontrado">No encontramos ese nombre. Prueba otro formato.</span>';
+    } else {
+      resultado.innerHTML = '<span class="no-encontrado">Escribe un poco más para encontrarte.</span>';
+    }
+  });
+ 
+  function copiarDatos() {
+    const texto = document.getElementById('datos-transferencia').innerText;
+    navigator.clipboard.writeText(texto).then(() => {
+      const btn = document.querySelector('.copiar-btn');
+      const textoOriginal = btn.textContent;
+      btn.textContent = '✓ Copiado';
+      setTimeout(() => btn.textContent = textoOriginal, 2000);
+    });
+  }
+</script>
+ 
 </body>
 </html>
+ 
