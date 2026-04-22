@@ -290,9 +290,97 @@
     font-family: var(--serif); font-style: italic;
     font-size: 16px; color: var(--azul-medio); margin-bottom: 8px;
   }
+  .misa-item .cita.por-definir { color: var(--texto-suave); opacity: 0.7; }
   .misa-item p.texto {
     font-family: var(--sans); font-size: 14px;
     color: var(--texto-suave); line-height: 1.6;
+  }
+  .misa-item p.texto strong { color: var(--azul-profundo); }
+
+  /* Fiesta litúrgica (Inmaculado Corazón + Dilexit Nos) */
+  .fiesta-liturgica {
+    background: linear-gradient(135deg, var(--azul-muy-claro) 0%, var(--crema) 100%);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 32px 32px 28px;
+    margin-bottom: 40px;
+  }
+  .fiesta-titulo {
+    font-family: var(--serif); font-size: 22px;
+    font-style: italic; font-weight: 500;
+    color: var(--azul-profundo); margin-bottom: 16px; text-align: center;
+  }
+  .fiesta-texto {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--texto); line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .fiesta-texto em { color: var(--azul-medio); font-style: italic; }
+  .cita-enciclica {
+    border-left: 3px solid var(--celeste);
+    padding: 14px 20px;
+    margin: 16px 0;
+    font-family: var(--serif); font-style: italic;
+    font-size: 15px; color: var(--texto);
+    line-height: 1.7; background: rgba(255,255,255,0.5);
+    border-radius: 0 6px 6px 0;
+  }
+  .cita-enciclica cite {
+    display: block; margin-top: 10px;
+    font-family: var(--sans); font-style: normal;
+    font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--azul-medio);
+  }
+
+  /* Repertorio header + spotify button */
+  .repertorio-header {
+    text-align: center; margin: 48px 0 24px;
+  }
+  .repertorio-titulo {
+    font-family: var(--serif); font-size: 24px;
+    font-weight: 500; color: var(--azul-profundo);
+    margin-bottom: 16px;
+  }
+  .spotify-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px;
+    background: #1DB954; color: #fff;
+    text-decoration: none; border-radius: 30px;
+    font-family: var(--sans); font-size: 13px;
+    font-weight: 500; letter-spacing: 0.05em;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .spotify-btn:hover { background: #1ed760; transform: translateY(-1px); }
+  .spotify-btn[data-placeholder="true"] { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
+  .spotify-icon { width: 20px; height: 20px; flex-shrink: 0; }
+  .spotify-icon-sm { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .spotify-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 4px;
+    color: #1DB954; text-decoration: none;
+    font-family: var(--sans); font-size: 12px;
+    font-weight: 500; letter-spacing: 0.05em;
+    transition: opacity 0.15s;
+  }
+  .spotify-link:hover { opacity: 0.75; }
+  .spotify-link[data-placeholder="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+  .spotify-link-inline { margin-left: 8px; }
+
+  /* Lista de canciones de comunión */
+  .comunion-list { list-style: none; padding: 0; margin-top: 6px; }
+  .comunion-list li {
+    display: flex; align-items: center;
+    padding: 8px 0;
+    font-family: var(--serif); font-style: italic;
+    font-size: 15px; color: var(--azul-medio);
+    border-bottom: 1px dashed var(--borde);
+  }
+  .comunion-list li:last-child { border-bottom: none; }
+  .comunion-num {
+    font-family: var(--sans); font-style: normal;
+    font-weight: 500; color: var(--azul-profundo);
+    margin-right: 10px; font-size: 13px;
   }
 
   .timeline { position: relative; padding-left: 40px; }
@@ -490,6 +578,58 @@
   }
   .copiar-btn:hover { background: rgba(255,255,255,0.1); }
 
+  /* ============ PAGOS ALTERNATIVOS ============ */
+  .pagos-alternativos { margin-top: 28px; text-align: center; }
+  .pagos-intro {
+    font-family: var(--serif); font-style: italic;
+    font-size: 17px; color: var(--texto-suave);
+    margin-bottom: 20px;
+  }
+  .pagos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px; max-width: 560px; margin: 0 auto;
+  }
+  .pago-card {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 22px 18px; background: var(--blanco);
+    border: 1px solid var(--borde); border-radius: 10px;
+    text-decoration: none; transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  .pago-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(20, 59, 107, 0.08);
+    border-color: var(--celeste);
+  }
+  .pago-card[data-placeholder="true"] {
+    opacity: 0.65; cursor: not-allowed;
+    pointer-events: none;
+  }
+  .pago-logo {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-weight: 600; font-size: 14px;
+    letter-spacing: 0.05em; color: var(--blanco);
+    margin-bottom: 10px;
+  }
+  .pago-mp .pago-logo { background: #00B1EA; }
+  .pago-mach .pago-logo { background: #1a1a1a; }
+  .pago-nombre {
+    font-family: var(--serif); font-size: 18px;
+    color: var(--azul-profundo); font-weight: 500; margin-bottom: 4px;
+  }
+  .pago-desc {
+    font-family: var(--sans); font-size: 12px;
+    color: var(--texto-suave); line-height: 1.5; text-align: center;
+  }
+  .pago-desc small { font-size: 10px; opacity: 0.75; letter-spacing: 0.05em; }
+  .pagos-nota {
+    margin-top: 18px; font-family: var(--sans);
+    font-size: 12px; color: var(--texto-suave);
+    font-style: italic;
+  }
+
   .faq-item { border-bottom: 1px solid var(--borde); padding: 4px 0; }
   .faq-item summary {
     cursor: pointer; padding: 18px 0;
@@ -650,10 +790,10 @@
     <div class="polaroid-row left">
       <div class="polaroid-slot a">
         <figure class="polaroid rot-1">
-          <img src="img/2020-conocimos.jpg" alt="José y Coti frente a una iglesia" loading="lazy">
+          <img src="img/01-la-bandera.jpg" alt="José y Coti en La Bandera" loading="lazy">
           <figcaption class="caption">
-            Cómo empezó todo: La Bandera
-            <span class="fecha">2020</span>
+            Cómo empezó todo
+            <span class="fecha">2020 · La Bandera</span>
           </figcaption>
         </figure>
       </div>
@@ -666,39 +806,38 @@
       <div class="year-dot"><span class="year-label">2021</span></div>
       <div class="polaroid-slot b">
         <figure class="polaroid rot-2">
-          <img src="img/2021-pololeo.jpg" alt="José de misión" loading="lazy">
+          <img src="img/02-coti-mision.jpg" alt="Coti de misión" loading="lazy">
           <figcaption class="caption">
-            Un pololeo que sigió de misión
-            <span class="fecha">2021 · Pololeo</span>
+            Coti se fue de misión
+            <span class="fecha">2021 · Misión País</span>
           </figcaption>
         </figure>
       </div>
     </div>
 
-     <div class="polaroid-row left">
-      <div class="polaroid-slot a empty"></div>
-      <div class="year-dot"><span class="year-label">2021</span></div>
-      <div class="polaroid-slot b">
-        <figure class="polaroid rot-2">
-          <img src="img/2021-pololeo.jpg" alt="Coti de misión" loading="lazy">
+    <div class="polaroid-row left">
+      <div class="polaroid-slot a">
+        <figure class="polaroid rot-3">
+          <img src="img/03-jose-mision.jpg" alt="José en el Jueves Solidario" loading="lazy">
           <figcaption class="caption">
-            Un pololeo que sigió de misión
-            <span class="fecha">2021 · Pololeo</span>
+            José también se fue
+            <span class="fecha">2022 · Jueves Solidario</span>
           </figcaption>
         </figure>
       </div>
+      <div class="year-dot"><span class="year-label">2022</span></div>
+      <div class="polaroid-slot b empty"></div>
     </div>
-
 
     <div class="polaroid-row right">
       <div class="polaroid-slot a empty"></div>
-      <div class="year-dot"><span class="year-label">2025</span></div>
+      <div class="year-dot"><span class="year-label">2024</span></div>
       <div class="polaroid-slot b">
         <figure class="polaroid rot-4">
-          <img src="img/2025-playa.jpg" alt="José y Coti en la playa" loading="lazy">
+          <img src="img/04-nuestro-lugar.jpg" alt="José y Coti en Cobquecura" loading="lazy">
           <figcaption class="caption">
-            Nuestros lugares
-            <span class="fecha">2025</span>
+            Nuestro lugar
+            <span class="fecha">Cobquecura</span>
           </figcaption>
         </figure>
       </div>
@@ -707,10 +846,10 @@
     <div class="polaroid-row left">
       <div class="polaroid-slot a">
         <figure class="polaroid rot-5">
-          <img src="img/2026-02-propuesta.jpg" alt="La propuesta de matrimonio" loading="lazy">
+          <img src="img/05-anillo.jpg" alt="El anillo de compromiso" loading="lazy">
           <figcaption class="caption">
-            La nueva etapa
-            <span class="fecha">Feb 2026 · La propuesta</span>
+            El anillo
+            <span class="fecha">Feb 2026 · El sí</span>
           </figcaption>
         </figure>
       </div>
@@ -723,9 +862,9 @@
       <div class="year-dot"><span class="year-label">Jun 2026</span></div>
       <div class="polaroid-slot b">
         <figure class="polaroid rot-6">
-          <img src="img/2026-06-matrimonio.jpg" alt="Save the date José y Coti 13 de junio 2026" loading="lazy">
+          <img src="img/06-save-the-date.jpg" alt="Save the date José y Coti 13 de junio 2026" loading="lazy">
           <figcaption class="caption">
-            Lo que viene
+            Save the date
             <span class="fecha">13 Junio 2026 · Matrimonio</span>
           </figcaption>
         </figure>
@@ -744,16 +883,209 @@
   <h2>La Misa</h2>
   <div class="subtitle">Ceremonia religiosa</div>
   <div class="divider-small"></div>
+
+  <!-- FIESTA DEL INMACULADO CORAZÓN DE MARÍA -->
+  <div class="fiesta-liturgica">
+    <div class="fiesta-titulo">Memoria del Inmaculado Corazón de María</div>
+    <p class="fiesta-texto">
+      Nos casamos el 13 de junio de 2026, día en que la Iglesia celebra la memoria del Inmaculado
+      Corazón de María. No es casualidad que queramos empezar nuestra vida en común bajo su manto:
+      es el corazón que Lucas describe como el que "conservaba todas estas cosas meditándolas
+      en su corazón" (Lc 2, 51), el corazón que aprendió a amar a Cristo antes que nadie.
+    </p>
+    <p class="fiesta-texto">
+      El día anterior —como cada año— la Iglesia celebra el Sagrado Corazón de Jesús.
+      <em>Dilexit Nos</em> (Francisco, 2024) lo recuerda así:
+    </p>
+    <blockquote class="cita-enciclica">
+      "El corazón de Cristo nos libera de ese otro dualismo de las comunidades y de los pastores
+      demasiado concentrados en actividades externas, reformas estructurales que son poco evangélicas,
+      organizaciones obsesivas, proyectos mundanos, reflexiones secularizadas, diversas propuestas
+      presentadas como exigencias, que quieren imponerse como la única voz del Evangelio."
+      <cite>— Dilexit Nos, 88</cite>
+    </blockquote>
+    <p class="fiesta-texto">
+      Queremos que nuestra casa sea eso: un corazón que escucha, que guarda, que ama.
+      Por eso las lecturas de esta misa son las propias de la fiesta.
+    </p>
+  </div>
+
+  <!-- LECTURAS -->
   <div class="misa-orden">
-    <div class="misa-item"><h3>Entrada</h3><p class="cita">[Canción de entrada]</p><p class="texto">Procesión de los novios y ministros.</p></div>
-    <div class="misa-item"><h3>Primera Lectura</h3><p class="cita">[Cita bíblica]</p><p class="texto">[Texto completo de la primera lectura.]</p></div>
-    <div class="misa-item"><h3>Salmo Responsorial</h3><p class="cita">[Salmo elegido]</p><p class="texto">[Estribillo del salmo.]</p></div>
-    <div class="misa-item"><h3>Segunda Lectura</h3><p class="cita">[Cita bíblica]</p><p class="texto">[Texto completo de la segunda lectura.]</p></div>
-    <div class="misa-item"><h3>Evangelio</h3><p class="cita">[Evangelio elegido]</p><p class="texto">[Texto del pasaje.]</p></div>
-    <div class="misa-item"><h3>Rito del Matrimonio</h3><p class="texto">Consentimiento, entrega de anillos y bendición de las arras.</p></div>
-    <div class="misa-item"><h3>Ofertorio</h3><p class="cita">[Canción del ofertorio]</p></div>
-    <div class="misa-item"><h3>Comunión</h3><p class="cita">[Cantos de comunión]</p></div>
-    <div class="misa-item"><h3>Salida</h3><p class="cita">[Canción de salida]</p></div>
+    <div class="misa-item">
+      <h3>Primera Lectura</h3>
+      <p class="cita">Isaías 61, 9-11</p>
+      <p class="texto">
+        "Su estirpe será célebre entre las naciones, su descendencia, en medio de los pueblos;
+        todos los que los vean reconocerán que son estirpe bendita del Señor. Desbordo de gozo
+        con el Señor, y me alegro con mi Dios: porque me ha vestido un traje de gala y me ha
+        envuelto en un manto de triunfo, como novio que se pone la corona, o novia que se adorna
+        con sus joyas. Como el suelo echa sus brotes, como un jardín hace brotar sus semillas,
+        así el Señor hará brotar la justicia y los himnos ante todos los pueblos."
+      </p>
+    </div>
+
+    <div class="misa-item">
+      <h3>Salmo Responsorial</h3>
+      <p class="cita">Salmo — 1 Samuel 2, 1. 4-5. 6-7. 8abcd</p>
+      <p class="texto">
+        <strong>R.</strong> <em>Mi corazón se regocija en el Señor, mi Salvador.</em><br><br>
+        Mi corazón se regocija en el Señor,<br>
+        mi poder se exalta por Dios;<br>
+        mi boca se ríe de mis enemigos,<br>
+        porque gozo con tu salvación. <strong>R.</strong><br><br>
+        El arco de los valientes se ha quebrado,<br>
+        los cobardes se ciñen de valor;<br>
+        los hartos se contratan por el pan,<br>
+        mientras los hambrientos engordan. <strong>R.</strong><br><br>
+        El Señor da la muerte y la vida,<br>
+        hunde en el abismo y levanta;<br>
+        da la pobreza y la riqueza,<br>
+        humilla y enaltece. <strong>R.</strong><br><br>
+        Levanta del polvo al desvalido,<br>
+        alza de la basura al pobre,<br>
+        para hacer que se siente entre príncipes<br>
+        y que herede un trono de gloria. <strong>R.</strong>
+      </p>
+    </div>
+
+    <div class="misa-item">
+      <h3>Evangelio</h3>
+      <p class="cita">Lucas 2, 41-51</p>
+      <p class="texto">
+        Los padres de Jesús solían ir cada año a Jerusalén por la fiesta de la Pascua.
+        Cuando cumplió doce años, subieron a la fiesta según la costumbre, y acabada la fiesta
+        emprendieron la vuelta; pero el niño Jesús se quedó en Jerusalén, sin que lo supieran
+        sus padres. Estos, creyendo que estaba en la caravana, hicieron una jornada y se pusieron
+        a buscarlo entre los parientes y conocidos; al no encontrarlo, se volvieron a Jerusalén
+        en su busca. A los tres días lo encontraron en el templo, sentado en medio de los maestros,
+        escuchándolos y haciéndoles preguntas; todos los que lo oían quedaban asombrados de su
+        talento y de las respuestas que daba. Al verlo, se quedaron atónitos, y le dijo su madre:
+        "Hijo, ¿por qué nos has tratado así? Tu padre y yo te buscábamos angustiados."
+        Él les contestó: "¿Por qué me buscabais? ¿No sabíais que yo debía estar en la casa
+        de mi Padre?" Pero ellos no comprendieron lo que quería decir. Él bajó con ellos a Nazaret
+        y siguió bajo su autoridad. <em>Su madre conservaba todo esto en su corazón.</em>
+      </p>
+    </div>
+
+    <div class="misa-item">
+      <h3>Rito del Matrimonio</h3>
+      <p class="texto">Consentimiento, entrega de anillos y bendición de las arras.</p>
+    </div>
+  </div>
+
+  <!-- REPERTORIO -->
+  <div class="repertorio-header">
+    <h3 class="repertorio-titulo">Repertorio de la misa</h3>
+    <!-- REEMPLAZAR con tu link de Spotify de la playlist completa -->
+    <a href="#spotify-playlist" class="spotify-btn" target="_blank" rel="noopener" data-placeholder="true">
+      <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/>
+      </svg>
+      Escuchar playlist completa en Spotify
+    </a>
+  </div>
+
+  <div class="misa-orden">
+
+    <div class="misa-item">
+      <h3>Entrada</h3>
+      <p class="cita">"Mi alma descansa en Ti" — P. de Schoenstatt</p>
+      <!-- REEMPLAZAR href con el link de Spotify de la canción -->
+      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+        <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+        Escuchar
+      </a>
+    </div>
+
+    <div class="misa-item">
+      <h3>Gloria</h3>
+      <p class="cita">"Gloria Nortino" — Misión País</p>
+      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+        <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+        Escuchar
+      </a>
+    </div>
+
+    <div class="misa-item">
+      <h3>Salmo</h3>
+      <p class="cita">Salmo 27 — Misión País</p>
+      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+        <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+        Escuchar
+      </a>
+    </div>
+
+    <div class="misa-item">
+      <h3>Aleluya</h3>
+      <p class="cita por-definir">Por definir</p>
+    </div>
+
+    <div class="misa-item">
+      <h3>Ofertorio</h3>
+      <p class="cita">"Te haces presente en mi" — Misión País</p>
+      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+        <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+        Escuchar
+      </a>
+    </div>
+
+    <div class="misa-item">
+      <h3>Santo</h3>
+      <p class="cita por-definir">Por definir</p>
+    </div>
+
+    <div class="misa-item">
+      <h3>Cordero</h3>
+      <p class="cita por-definir">Por definir</p>
+    </div>
+
+    <div class="misa-item">
+      <h3>Comunión</h3>
+      <p class="cita">Tres cantos</p>
+      <ul class="comunion-list">
+        <li>
+          <span class="comunion-num">1.</span>
+          "Huayno al Sagrado Corazón" — Misión País
+          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener" data-placeholder="true">
+            <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+          </a>
+        </li>
+        <li>
+          <span class="comunion-num">2.</span>
+          "Verás cosas mayores" — Schoenstatt
+          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener" data-placeholder="true">
+            <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+          </a>
+        </li>
+        <li>
+          <span class="comunion-num">3.</span>
+          "Será Dios" — Schoenstatt
+          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener" data-placeholder="true">
+            <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="misa-item">
+      <h3>Antes de la salida</h3>
+      <p class="cita">"Himno de San José" — Misión País</p>
+      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+        <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+        Escuchar
+      </a>
+    </div>
+
+    <div class="misa-item">
+      <h3>Salida</h3>
+      <p class="cita">"María, mi Alianza" — Misión País</p>
+      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+        <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
+        Escuchar
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -868,14 +1200,34 @@
   <div class="transferencia-box">
     <h3>Datos para transferencia</h3>
     <div class="transferencia-datos" id="datos-transferencia">
-      <div><span class="label-dato">Nombre:</span>José Ignacio Torrealba</div>
-      <div><span class="label-dato">RUT:</span>194175329</div>
-      <div><span class="label-dato">Banco:</span>Mercado Pago</div>
-      <div><span class="label-dato">Tipo de cuenta:</span> Vista </div>
-      <div><span class="label-dato">Número:</span>1064452729</div>
-      <div><span class="label-dato">Email:</span>jtorrealbaj@gmail.com</div>
+      <div><span class="label-dato">Nombre:</span> José Ignacio Torrealba</div>
+      <div><span class="label-dato">RUT:</span> 19.417.532-9</div>
+      <div><span class="label-dato">Banco:</span> Mercado Pago</div>
+      <div><span class="label-dato">Tipo de cuenta:</span> Cuenta Vista</div>
+      <div><span class="label-dato">Número:</span> 1064452729</div>
+      <div><span class="label-dato">Email:</span> jtorrealbaj@gmail.com</div>
     </div>
     <button class="copiar-btn" onclick="copiarDatos()">Copiar datos</button>
+  </div>
+
+  <!-- ============ OPCIONES DE PAGO ============ -->
+  <div class="pagos-alternativos">
+    <p class="pagos-intro">O si prefieres pagar con tarjeta o desde otra app:</p>
+    <div class="pagos-grid">
+      <!-- REEMPLAZAR href con tu "Link de cobro" de Mercado Pago. Generarlo en la app MP: Cobrar → Link de cobro → copiar y pegar aquí -->
+      <a href="#mercadopago" class="pago-card pago-mp" target="_blank" rel="noopener" data-placeholder="true">
+        <div class="pago-logo">MP</div>
+        <div class="pago-nombre">Mercado Pago</div>
+        <div class="pago-desc">Tarjeta de crédito o débito<br><small>Comisión corre por cuenta de MP</small></div>
+      </a>
+      <!-- REEMPLAZAR href con tu link MACH: se genera desde la app MACH, en "Solicitar dinero" → copiar link -->
+      <a href="#mach" class="pago-card pago-mach" target="_blank" rel="noopener" data-placeholder="true">
+        <div class="pago-logo">MACH</div>
+        <div class="pago-nombre">MACH</div>
+        <div class="pago-desc">Transferencia gratis<br><small>Si el invitado tiene MACH</small></div>
+      </a>
+    </div>
+    <p class="pagos-nota">La transferencia bancaria tradicional sigue siendo la opción con costo cero para ambos.</p>
   </div>
 </section>
 
@@ -999,3 +1351,4 @@
 </script>
 
 </body>
+</html>

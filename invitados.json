@@ -1,0 +1,30 @@
+[
+  {
+    "nombre": "Constanza",
+    "mesa": 1
+  },
+  {
+    "nombre": "José Ignacio Torrealba",
+    "mesa": 1
+  },
+  {
+    "nombre": "Ana Torres",
+    "mesa": 2
+  },
+  {
+    "nombre": "María González",
+    "mesa": 3
+  },
+  {
+    "nombre": "Juan Pérez",
+    "mesa": 5
+  },
+  {
+    "nombre": "Carolina Silva",
+    "mesa": 8
+  },
+  {
+    "nombre": "Pedro Silva",
+    "mesa": 8
+  }
+]
