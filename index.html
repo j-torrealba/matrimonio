@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -644,6 +645,25 @@
   }
   .btn-outline:hover { background: var(--azul-profundo); color: var(--crema); }
   .cta-wrap { text-align: center; margin-top: 40px; }
+  .cta-wrap-doble { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  .fiesta-mesas-nota {
+    font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-top: 12px; color: var(--azul-medio);
+  }
+  .fiesta-mesas-nota a {
+    color: var(--azul-medio); text-decoration: none;
+    border-bottom: 1px solid var(--celeste);
+    padding-bottom: 1px; transition: opacity 0.2s;
+  }
+  .fiesta-mesas-nota a:hover { opacity: 0.65; }
+
+  .timeline-lugar {
+    font-family: var(--sans); font-size: 12px;
+    color: var(--azul-medio); margin-top: 2px;
+    letter-spacing: 0.03em;
+  }
 
   footer {
     background: var(--azul-profundo); color: var(--crema);
@@ -674,9 +694,12 @@
     .regalos-causas { grid-template-columns: 1fr; }
     .hero .ampersand { font-size: 90px; }
 
-    /* Polaroid timeline stacks on mobile — single column, year label above each photo */
-    .polaroid-timeline { padding: 8px 0 0; }
-    .polaroid-timeline::before { display: none; }
+    /* Polaroid timeline stacks on mobile — single column with left-side dotted line */
+    .polaroid-timeline { padding: 8px 0 0 28px; }
+    .polaroid-timeline::before {
+      display: block;
+      left: 6px;
+    }
     .polaroid-row {
       grid-template-columns: 1fr;
       justify-items: center;
@@ -687,12 +710,15 @@
       flex-direction: row;
       gap: 10px;
       margin-bottom: 16px;
+      margin-left: -28px;
+      align-self: flex-start;
       position: relative;
     }
     .polaroid-row .year-dot::before {
       width: 8px; height: 8px;
       border: 2px solid var(--crema);
       box-shadow: 0 0 0 1px var(--azul-medio);
+      flex-shrink: 0;
     }
     .polaroid-row .year-dot .year-label {
       position: static;
@@ -986,7 +1012,7 @@
     <div class="misa-item">
       <h3>Salmo</h3>
       <p class="cita">Salmo 27 — Misión País</p>
-      <a href="https://open.spotify.com/track/5QaH1jIIYeGOkkC9o2Gn3B?si=216d48636b1748e7" class="spotify-link" target="_blank" rel="noopener">
+      <a href="https://open.spotify.com/intl-es/track/5QaH1jIIYeGOkkC9o2Gn3B?si=fe0d54844f124264" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1071,18 +1097,40 @@
   <div class="subtitle">Cronograma y lugar</div>
   <p class="texto">
     La comida será en modalidad cóctel extendido: habrá mesas y livings, algunos asignados (principalmente mesas) y otros de libre disposición.
-    Pueden revisarlo en la sección <a href="#mesas">Mesas y Livings</a>.
   </p>
+  <p class="fiesta-mesas-nota"><a href="#mesas">Ver distribución de Mesas y Livings →</a></p>
   <div class="divider-small"></div>
   <div class="timeline">
-    <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-title">Ceremonia religiosa</div><div class="timeline-desc">[Iglesia y dirección]</div></div>
-    <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-title">Cóctel de bienvenida</div><div class="timeline-desc">[Lugar]</div></div>
-    <div class="timeline-item"><div class="timeline-time">15:30</div><div class="timeline-title">Continua en modalidad "Cóctel extendido"</div><div class="timeline-desc">[Salón]</div></div>
-    <div class="timeline-item"><div class="timeline-time">17:30</div><div class="timeline-title">Baile y fiesta</div><div class="timeline-desc">Hasta el amanecer</div></div>
-    <div class="timeline-item"><div class="timeline-time">05:00</div><div class="timeline-title">Cierre</div><div class="timeline-desc">Esperamos que se queden hasta el final</div></div>
+    <div class="timeline-item">
+      <div class="timeline-time">12:30</div>
+      <div class="timeline-title">Ceremonia religiosa</div>
+      <div class="timeline-desc">Iglesia San José de La Matriz</div>
+      <div class="timeline-lugar">Merced 417, Curicó</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:30</div>
+      <div class="timeline-title">Cóctel de bienvenida</div>
+      <div class="timeline-desc">Casa Verona</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:30</div>
+      <div class="timeline-title">Cóctel extendido</div>
+      <div class="timeline-desc">Casa Verona · mesas y livings</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:30</div>
+      <div class="timeline-title">Baile y fiesta</div>
+      <div class="timeline-desc">Casa Verona</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">23:30</div>
+      <div class="timeline-title">Cierre</div>
+      <div class="timeline-desc">Esperamos que se queden hasta el final</div>
+    </div>
   </div>
-  <div class="cta-wrap">
-    <a href="https://maps.google.com/?q=[DIRECCION]" class="btn btn-outline" target="_blank" rel="noopener">Ver ubicación en Google Maps</a>
+  <div class="cta-wrap cta-wrap-doble">
+    <a href="https://maps.google.com/?q=Merced+417+Curic%C3%B3" class="btn btn-outline" target="_blank" rel="noopener">Iglesia · Ver en Maps</a>
+    <a href="https://maps.google.com/?q=-35.033825,-71.256454" class="btn btn-outline" target="_blank" rel="noopener">Casa Verona · Ver en Maps</a>
   </div>
 </section>
 
