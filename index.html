@@ -241,7 +241,6 @@
     font-weight: 400;
   }
   .polaroid::before {
-    /* piece of tape on top */
     content: '';
     position: absolute;
     top: -10px; left: 50%;
@@ -351,7 +350,6 @@
     transition: background 0.15s, transform 0.1s;
   }
   .spotify-btn:hover { background: #1ed760; transform: translateY(-1px); }
-  .spotify-btn[data-placeholder="true"] { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
   .spotify-icon { width: 20px; height: 20px; flex-shrink: 0; }
   .spotify-icon-sm { width: 14px; height: 14px; flex-shrink: 0; }
 
@@ -364,7 +362,6 @@
     transition: opacity 0.15s;
   }
   .spotify-link:hover { opacity: 0.75; }
-  .spotify-link[data-placeholder="true"] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
   .spotify-link-inline { margin-left: 8px; }
 
   /* Lista de canciones de comunión */
@@ -407,31 +404,6 @@
     margin: 2px 0 4px; letter-spacing: 0.02em;
   }
   .timeline-desc { font-family: var(--sans); font-size: 13px; color: var(--texto-suave); }
-
-  .dress-code {
-    background: var(--blanco); padding: 48px 40px;
-    border-radius: 12px; text-align: center;
-    border: 1px solid var(--borde);
-  }
-  .dress-code-title {
-    font-family: var(--serif); font-size: 32px;
-    font-weight: 400; color: var(--azul-profundo);
-    margin-bottom: 12px; font-style: italic;
-  }
-  .dress-code-desc {
-    font-family: var(--sans); font-size: 15px;
-    color: var(--texto-suave); max-width: 480px;
-    margin: 0 auto 24px;
-  }
-  .dress-code-swatches { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
-  .swatch {
-    width: 48px; height: 48px; border-radius: 50%;
-    border: 1px solid var(--borde);
-  }
-  .dress-code-nota {
-    font-family: var(--serif); font-style: italic;
-    font-size: 15px; color: var(--texto-suave); margin-top: 24px;
-  }
 
   .mesas-buscador {
     background: var(--blanco); padding: 36px 32px;
@@ -531,6 +503,11 @@
   .regalos-narrativa {
     font-family: var(--sans); font-size: 15px;
     color: var(--texto-suave); text-align: center;
+    max-width: 620px; margin: 0 auto 40px; line-height: 1.7;
+  }
+  .regalos-oracion {
+    font-family: var(--serif); font-style: italic;
+    font-size: 17px; color: var(--texto-suave); text-align: center;
     max-width: 620px; margin: 0 auto 40px; line-height: 1.7;
   }
   .regalos-causas {
@@ -695,7 +672,6 @@
     .transferencia-box { padding: 28px 20px; }
     .transferencia-datos { font-size: 12px; }
     .regalos-causas { grid-template-columns: 1fr; }
-    .dress-code { padding: 36px 24px; }
     .hero .ampersand { font-size: 90px; }
 
     /* Polaroid timeline stacks on mobile — single column, year label above each photo */
@@ -746,7 +722,7 @@
     <li><a href="#historia">Historia</a></li>
     <li><a href="#misa">Misa</a></li>
     <li><a href="#fiesta">Fiesta</a></li>
-    <li><a href="#mesas">Mesas</a></li>
+    <li><a href="#mesas">Mesas y Livings</a></li>
     <li><a href="#fotos">Fotos</a></li>
     <li><a href="#regalos">Regalos</a></li>
     <li><a href="#faq">FAQ</a></li>
@@ -801,7 +777,7 @@
       <div class="polaroid-slot b empty"></div>
     </div>
 
-     <div class="polaroid-row left">
+    <div class="polaroid-row left">
       <div class="polaroid-slot a empty"></div>
       <div class="year-dot"><span class="year-label">2024</span></div>
       <div class="polaroid-slot b">
@@ -809,26 +785,26 @@
           <img src="img/02-coti-mision.jpg" alt="Coti de misión" loading="lazy">
           <figcaption class="caption">
             Coti de misión
-            <span class="fecha">2024 · Misericordia - La Pincoya </span>
+            <span class="fecha">2024 · Misericordia - La Pincoya</span>
           </figcaption>
         </figure>
       </div>
     </div>
-    
+
     <div class="polaroid-row right">
       <div class="polaroid-slot b">
         <figure class="polaroid rot-3">
           <img src="img/03-jose-mision.jpg" alt="José en el Jueves Solidario" loading="lazy">
           <figcaption class="caption">
             José de La Bandera
-            <span class="fecha">2022 · Jueves Solidario </span>
+            <span class="fecha">2022 · Jueves Solidario</span>
           </figcaption>
         </figure>
       </div>
       <div class="year-dot"><span class="year-label">2022</span></div>
       <div class="polaroid-slot b empty"></div>
     </div>
-    
+
     <div class="polaroid-row right">
       <div class="polaroid-slot b empty"></div>
       <div class="year-dot"><span class="year-label">2025</span></div>
@@ -849,7 +825,7 @@
           <img src="img/05-anillo.jpg" alt="El anillo de compromiso" loading="lazy">
           <figcaption class="caption">
             El anillo
-            <span class="fecha">Feb 2026 · El sí </span>
+            <span class="fecha">Feb 2026 · El sí</span>
           </figcaption>
         </figure>
       </div>
@@ -890,8 +866,9 @@
     <p class="fiesta-texto">
       Nos casamos el 13 de junio de 2026, día en que la Iglesia celebra la memoria del Inmaculado
       Corazón de María. Como no es casualidad, tomamos las lecturas propias de la fiesta, como un regalo de la Providencia.
-    </div>
-      Queremos empezar esta nueva etapa bajo la ternura y la profunidad de María.
+    </p>
+    <p class="fiesta-texto">
+      Queremos empezar esta nueva etapa bajo la ternura y la profundidad de María.
       Es el corazón que Lucas describe como el que "conservaba todas estas cosas meditándolas" (cf. Lc 2, 51). Es mucho lo vivido,
       lo que agradecemos, lo que no comprendemos, y todo eso, lo llevamos en el corazón.
     </p>
@@ -900,16 +877,16 @@
       <em>Dilexit Nos</em> (Francisco, 2024) lo recuerda así:
     </p>
     <blockquote class="cita-enciclica">
-      "«Nos amó», dice san Pablo refiriéndose a Cristo (Rm 8,37), para ayudarnos a descubrir que de ese amor nada «podrá separarnos» (Rm 8,39). 
-      Pablo lo afirmaba con certeza porque Cristo mismo lo había asegurado a sus discípulos: «los he amado» (Jn 15,9.12). 
-      También nos dijo: «los llamo amigos» (Jn 15,15). Su corazón abierto nos precede y nos espera sin condiciones, sin exigir un requisito previo 
-      para poder amarnos y proponernos su amistad: «nos amó primero» (1 Jn 4,10). Gracias a Jesús «nosotros hemos conocido el amor que Dios nos tiene 
+      "«Nos amó», dice san Pablo refiriéndose a Cristo (Rm 8,37), para ayudarnos a descubrir que de ese amor nada «podrá separarnos» (Rm 8,39).
+      Pablo lo afirmaba con certeza porque Cristo mismo lo había asegurado a sus discípulos: «los he amado» (Jn 15,9.12).
+      También nos dijo: «los llamo amigos» (Jn 15,15). Su corazón abierto nos precede y nos espera sin condiciones, sin exigir un requisito previo
+      para poder amarnos y proponernos su amistad: «nos amó primero» (1 Jn 4,10). Gracias a Jesús «nosotros hemos conocido el amor que Dios nos tiene
       y hemos creído» en ese amor (1 Jn 4,16)."
       <cite>— Dilexit Nos, 1</cite>
     </blockquote>
     <p class="fiesta-texto">
       Queremos dar testimonio de ese amor, desde la familia, de la iglesia, para el mundo: un corazón que escucha, que guarda, que ama.
-      Por eso rescibimos esta fecha como un realgo para nuestro matrimonio
+      Por eso recibimos esta fecha como un regalo para nuestro matrimonio.
     </p>
   </div>
 
@@ -919,9 +896,9 @@
       <h3>Primera Lectura</h3>
       <p class="cita">Isaías 61, 9-11</p>
       <p class="texto">
-        "Sus hijos se harán famosos entre las naciones y sus nietos, en medio de los pueblos. Todos los que los vean reconocerán que son una raza bendecida de Yavé. 
-        Salto de alegría delante de Yavé, y mi alma se alegra en mi Dios, pues él me puso ropas de salvación y me abrigó con el chal de la justicia, 
-        como el novio se coloca su corona, o como la esposa se arregla con sus joyas. Pues así como brotan de la tierra las semillas o como aparecen 
+        "Sus hijos se harán famosos entre las naciones y sus nietos, en medio de los pueblos. Todos los que los vean reconocerán que son una raza bendecida de Yavé.
+        Salto de alegría delante de Yavé, y mi alma se alegra en mi Dios, pues él me puso ropas de salvación y me abrigó con el chal de la justicia,
+        como el novio se coloca su corona, o como la esposa se arregla con sus joyas. Pues así como brotan de la tierra las semillas o como aparecen
         las plantitas en el jardín, así el Señor Yavé hará brotar la justicia y la alabanza a la vista de todas las naciones."
       </p>
     </div>
@@ -978,8 +955,7 @@
   <!-- REPERTORIO -->
   <div class="repertorio-header">
     <h3 class="repertorio-titulo">Repertorio de la misa</h3>
-    <!-- REEMPLAZAR con tu link de Spotify de la playlist completa -->
-    <a href="#spotify-playlist" class="spotify-btn" target="_blank" rel="noopener" data-placeholder="true">
+    <a href="#" class="spotify-btn" target="_blank" rel="noopener">
       <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/>
       </svg>
@@ -992,8 +968,7 @@
     <div class="misa-item">
       <h3>Entrada</h3>
       <p class="cita">"Mi alma descansa en Ti" — P. de Schoenstatt</p>
-      <!-- REEMPLAZAR href con el link de Spotify de la canción -->
-      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+      <a href="#" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1002,7 +977,7 @@
     <div class="misa-item">
       <h3>Gloria</h3>
       <p class="cita">"Gloria Nortino" — Misión País</p>
-      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+      <a href="#" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1011,7 +986,7 @@
     <div class="misa-item">
       <h3>Salmo</h3>
       <p class="cita">Salmo 27 — Misión País</p>
-      <a href="#" class="https://open.spotify.com/intl-es/track/5QaH1jIIYeGOkkC9o2Gn3B?si=fe0d54844f124264" target="_blank" rel="noopener" data-placeholder="true">
+      <a href="#" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1025,7 +1000,7 @@
     <div class="misa-item">
       <h3>Ofertorio</h3>
       <p class="cita">"Te haces presente en mi" — Misión País</p>
-      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+      <a href="#" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1048,21 +1023,21 @@
         <li>
           <span class="comunion-num">1.</span>
           "Huayno al Sagrado Corazón" — Misión País
-          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener" data-placeholder="true">
+          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener">
             <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
           </a>
         </li>
         <li>
           <span class="comunion-num">2.</span>
           "Verás cosas mayores" — Schoenstatt
-          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener" data-placeholder="true">
+          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener">
             <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
           </a>
         </li>
         <li>
           <span class="comunion-num">3.</span>
           "Será Dios" — Schoenstatt
-          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener" data-placeholder="true">
+          <a href="#" class="spotify-link spotify-link-inline" target="_blank" rel="noopener">
             <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
           </a>
         </li>
@@ -1072,7 +1047,7 @@
     <div class="misa-item">
       <h3>Antes de la salida</h3>
       <p class="cita">"Himno de San José" — Misión País</p>
-      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+      <a href="#" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1081,7 +1056,7 @@
     <div class="misa-item">
       <h3>Salida</h3>
       <p class="cita">"María, mi Alianza" — Misión País</p>
-      <a href="#" class="spotify-link" target="_blank" rel="noopener" data-placeholder="true">
+      <a href="#" class="spotify-link" target="_blank" rel="noopener">
         <svg class="spotify-icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.52 17.34a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.55-1.16a.75.75 0 0 1-.33-1.46c4.58-1.04 8.51-.58 11.66 1.34.36.22.47.69.25 1.03zm1.47-3.28a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.79c4.37-1.33 9.8-.68 13.5 1.6.44.27.58.84.3 1.28zm.13-3.42c-3.87-2.3-10.26-2.51-13.96-1.39a1.12 1.12 0 1 1-.65-2.14c4.25-1.29 11.3-1.04 15.76 1.61a1.12 1.12 0 1 1-1.15 1.92z"/></svg>
         Escuchar
       </a>
@@ -1095,10 +1070,9 @@
   <h2>El día</h2>
   <div class="subtitle">Cronograma y lugar</div>
   <p class="texto">
-    La comida será en modalidad Cóctel extendido, habrán mesas y livinigs, aglunos asignados (principalemtne mesas) y algunos livignis, 
-    el resto libre. Acá [ir a sección de Mesas y Livings] podrán revisarlo bien. 
-      </div>
-      </p>
+    La comida será en modalidad cóctel extendido: habrá mesas y livings, algunos asignados (principalmente mesas) y otros de libre disposición.
+    Pueden revisarlo en la sección <a href="#mesas">Mesas y Livings</a>.
+  </p>
   <div class="divider-small"></div>
   <div class="timeline">
     <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-title">Ceremonia religiosa</div><div class="timeline-desc">[Iglesia y dirección]</div></div>
@@ -1112,27 +1086,9 @@
   </div>
 </section>
 
-<!-- ============ DRESS CODE ============ -->
-<section id="dress-code" class="narrow">
-  <h2>Dress code</h2>
-  <div class="subtitle">Cómo vestirse</div>
-  <div class="divider-small"></div>
-  <div class="dress-code">
-    <div class="dress-code-title">Formal elegante</div>
-    <p class="dress-code-desc">[Ajustar. Ej: Caballeros con traje oscuro. Damas con vestido largo o de cóctel. Colores sugeridos dentro de la paleta azul, crema y tonos tierra.]</p>
-    <div class="dress-code-swatches">
-      <div class="swatch" style="background: #143b6b;"></div>
-      <div class="swatch" style="background: #3b7ca8;"></div>
-      <div class="swatch" style="background: #65b8d7;"></div>
-      <div class="swatch" style="background: #faf7f2;"></div>
-    </div>
-    <p class="dress-code-nota">Por favor evitar el blanco · Reservado para la novia</p>
-  </div>
-</section>
-
-<!-- ============ MESAS (cargada desde invitados.json) ============ -->
+<!-- ============ MESAS Y LIVINGS (cargada desde invitados.json) ============ -->
 <section id="mesas" class="narrow">
-  <h2>Tu mesa</h2>
+  <h2>Mesas y Livings</h2>
   <div class="subtitle">Busca tu nombre</div>
   <div class="divider-small"></div>
   <div class="mesas-buscador">
@@ -1149,19 +1105,10 @@
   <div class="divider-small"></div>
   <div class="alojamientos">
     <div class="alojamiento-card">
-      <h3>[Hotel 1]</h3><div class="distancia">A 5 min del salón</div>
-      <p>Opción cómoda y cercana. Tarifa referencial: $[valor] por noche.</p>
-      <a href="#" target="_blank" rel="noopener">Reservar →</a>
-    </div>
-    <div class="alojamiento-card">
-      <h3>[Hotel 2]</h3><div class="distancia">A 15 min del salón</div>
-      <p>Alternativa más económica. Tarifa referencial: $[valor] por noche.</p>
-      <a href="#" target="_blank" rel="noopener">Reservar →</a>
-    </div>
-    <div class="alojamiento-card">
-      <h3>[Hotel 3]</h3><div class="distancia">A 10 min del salón</div>
-      <p>Opción boutique. Tarifa referencial: $[valor] por noche.</p>
-      <a href="#" target="_blank" rel="noopener">Reservar →</a>
+      <h3>Villa El Descanso</h3>
+      <div class="distancia">Curicó</div>
+      <p>Excelente opción de alojamiento en Curicó. Si mencionan que vienen por nuestro matrimonio, les aplicarán un descuento especial.</p>
+      <a href="https://www.google.com/maps/place/villa+el+descanso+curico/data=!4m2!3m1!1s0x966457dc6770cdc9:0x770d8a492f758174" target="_blank" rel="noopener">Ver en Google Maps →</a>
     </div>
   </div>
 </section>
@@ -1174,7 +1121,6 @@
   <div class="fotos-cta">
     <div class="icono">✦</div>
     <p>Suban sus fotos y videos del día a nuestra carpeta compartida. Nos encantaría revivir cada momento a través de sus ojos.</p>
-    <!-- REEMPLAZAR: link a carpeta compartida de Google Drive con permiso de "cualquiera con el link puede subir archivos" -->
     <a href="https://drive.google.com/drive/folders/REEMPLAZAR_CON_ID_DE_CARPETA_DRIVE" class="btn" target="_blank" rel="noopener">Subir fotos a Google Drive</a>
   </div>
 </section>
@@ -1186,7 +1132,6 @@
   <div class="divider-small"></div>
   <div class="dedicatoria-cta">
     <p>"Déjennos unas palabras que podamos guardar. Un deseo, un recuerdo, un consejo para esta vida que empezamos."</p>
-    <!-- REEMPLAZAR: link al Google Form con campos Nombre + Mensaje -->
     <a href="https://forms.gle/REEMPLAZAR_CON_ID_DEL_FORM" class="btn" target="_blank" rel="noopener">Dejar dedicatoria</a>
   </div>
 </section>
@@ -1197,12 +1142,13 @@
   <div class="subtitle">Gracias por acompañarnos</div>
   <div class="divider-small"></div>
   <p class="regalos-intro">Su presencia en este día es el mejor regalo que podemos recibir.</p>
-  <p class="regalos-narrativa">Si quieren acompañarnos con algo más, hemos decidido que los aportes nos ayuden a construir esta nueva etapa: cubrir los gastos del matrimonio, preparar nuestra nueva casa, y emprender juntos un viaje a Roma para recibir la bendición del Papa como matrimonio.</p>
+  <p class="regalos-narrativa">Si quieren acompañarnos con algo más, estas son nuestras tres propuestas: cubrir los gastos del matrimonio, preparar nuestra nueva casa, y emprender juntos un viaje a Roma para recibir la bendición del Papa como matrimonio.</p>
   <div class="regalos-causas">
     <div class="causa-mini"><span class="numero">I</span><h3>El matrimonio</h3><p>Los gastos de este día</p></div>
     <div class="causa-mini"><span class="numero">II</span><h3>Nuestra casa</h3><p>El hogar que construiremos</p></div>
     <div class="causa-mini"><span class="numero">III</span><h3>Roma</h3><p>La bendición del Papa</p></div>
   </div>
+  <p class="regalos-oracion">Dicho esto, nos basta con poder celebrar esta fiesta junto a ustedes. Y siempre consideraremos la oración como lo mejor que nos puedan entregar — literalmente.</p>
   <div class="transferencia-box">
     <h3>Datos para transferencia</h3>
     <div class="transferencia-datos" id="datos-transferencia">
@@ -1220,13 +1166,11 @@
   <div class="pagos-alternativos">
     <p class="pagos-intro">O si prefieres pagar con tarjeta o desde otra app:</p>
     <div class="pagos-grid">
-      <!-- REEMPLAZAR href con tu "Link de cobro" de Mercado Pago. Generarlo en la app MP: Cobrar → Link de cobro → copiar y pegar aquí -->
       <a href="#mercadopago" class="pago-card pago-mp" target="_blank" rel="noopener" data-placeholder="true">
         <div class="pago-logo">MP</div>
         <div class="pago-nombre">Mercado Pago</div>
         <div class="pago-desc">Tarjeta de crédito o débito<br><small>Comisión corre por cuenta de MP</small></div>
       </a>
-      <!-- REEMPLAZAR href con tu link MACH: se genera desde la app MACH, en "Solicitar dinero" → copiar link -->
       <a href="#mach" class="pago-card pago-mach" target="_blank" rel="noopener" data-placeholder="true">
         <div class="pago-logo">MACH</div>
         <div class="pago-nombre">MACH</div>
@@ -1247,28 +1191,20 @@
     <div class="respuesta">Les pedimos llegar a la iglesia 15 minutos antes del inicio de la ceremonia, es decir a las [18:45]. La misa comienza en punto.</div>
   </details>
   <details class="faq-item">
-    <summary>¿Puedo llevar niños?</summary>
-    <div class="respuesta">[Ajustar según su decisión.]</div>
-  </details>
-  <details class="faq-item">
     <summary>¿Hay estacionamiento?</summary>
-    <div class="respuesta">[Ajustar.]</div>
+    <div class="respuesta">Sí, hay estacionamiento disponible en el lugar.</div>
   </details>
   <details class="faq-item">
     <summary>¿Cómo confirmo asistencia?</summary>
-    <div class="respuesta">Pueden confirmar asistencia hasta el [fecha] escribiendo a [correo] o WhatsApp [+56 9 XXXX XXXX].</div>
+    <div class="respuesta">La asistencia se confirma a través de este formulario: <a href="https://forms.gle/REEMPLAZAR_CON_ID_DEL_FORM" target="_blank" rel="noopener">confirmar asistencia</a>. Por favor completarlo antes del [fecha].</div>
   </details>
   <details class="faq-item">
     <summary>¿Qué regalo es más útil?</summary>
     <div class="respuesta">Preferimos aportes por transferencia enfocados en tres destinos: matrimonio, nuestra casa, y viaje a Roma. No tenemos lista de regalos tradicional.</div>
   </details>
   <details class="faq-item">
-    <summary>¿La misa es en español?</summary>
-    <div class="respuesta">Sí. En esta página pueden consultar las lecturas con anticipación si desean seguirla.</div>
-  </details>
-  <details class="faq-item">
     <summary>Soy de fuera de Santiago, ¿dónde me alojo?</summary>
-    <div class="respuesta">En "Dónde quedarse" incluimos tres opciones a distintas distancias y precios.</div>
+    <div class="respuesta">En "Dónde quedarse" encontrarás la opción que recomendamos. Si mencionas que vienes por el matrimonio, te aplicarán un descuento.</div>
   </details>
 </section>
 
@@ -1280,8 +1216,7 @@
 
 <script>
   // ============ COUNTDOWN ============
-  // AJUSTAR hora exacta si procede
-  const fechaBoda = new Date('2026-06-13T19:00:00').getTime();
+  const fechaBoda = new Date('2026-06-13T12:30:00').getTime();
 
   function actualizarCountdown() {
     const ahora = new Date().getTime();
