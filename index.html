@@ -467,6 +467,30 @@
     font-style: normal; margin-top: 8px;
   }
 
+  .viaje-card {
+    background: var(--blanco); padding: 36px 32px;
+    border-radius: 10px; border: 1px solid var(--borde);
+    text-align: center;
+  }
+  .viaje-card .viaje-icono {
+    font-size: 36px; margin-bottom: 16px;
+  }
+  .viaje-card p {
+    font-family: var(--sans); font-size: 14px;
+    color: var(--texto-suave); line-height: 1.7;
+    max-width: 520px; margin: 0 auto 12px;
+  }
+  .viaje-card .viaje-tags {
+    display: flex; gap: 10px; justify-content: center;
+    flex-wrap: wrap; margin: 20px 0 28px;
+  }
+  .viaje-tag {
+    font-family: var(--sans); font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--azul-medio); background: var(--azul-muy-claro);
+    padding: 6px 14px; border-radius: 20px;
+  }
+
   .alojamientos {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
@@ -853,6 +877,31 @@
   </p>
 </section>
 
+<!-- ============ INMACULADO CORAZÓN DE MARÍA ============ -->
+<section id="inmaculado-corazon" class="narrow">
+  <h2>El Corazón de María</h2>
+  <div class="subtitle">Por qué nos casamos este día</div>
+  <div class="divider-small"></div>
+
+  <div class="fiesta-liturgica">
+    <div class="fiesta-titulo">Fátima, 1917</div>
+    <p class="fiesta-texto">
+      En una de las apariciones de la Virgen en Fátima, Nuestra Señora dijo a Lucía,
+      una de los tres pastorcitos videntes:
+    </p>
+    <blockquote class="cita-enciclica">
+      "Jesús quiere servirse de ti para darme a conocer y amar. Quiere establecer en el mundo la devoción a mi Inmaculado Corazón."
+      <cite>— Nuestra Señora de Fátima a Lucía, 1917</cite>
+    </blockquote>
+    <blockquote class="cita-enciclica">
+      "A quien le abrazare prometo la salvación y serán queridas sus almas por Dios como flores puestas por mí para adornar su Trono.
+      [El Corazón de María] es un Corazón tan lleno de bondad, dulzura, misericordia y liberalidad que nadie ha acudido a él
+      con humildad y confianza sin recibir sus consuelos."
+      <cite>— San Juan Eudes</cite>
+    </blockquote>
+  </div>
+</section>
+
 <!-- ============ MISA ============ -->
 <section id="misa">
   <h2>La Misa</h2>
@@ -1120,6 +1169,24 @@
 </section>
 
 <!-- ============ ALOJAMIENTO ============ -->
+<section id="viaje" class="narrow">
+  <h2>¿Viajás desde Santiago?</h2>
+  <div class="subtitle">Coordina tu viaje con otros invitados</div>
+  <div class="divider-small"></div>
+  <div class="viaje-card">
+    <div class="viaje-icono">🚗</div>
+    <p>
+      Si viajas en auto y tienes espacio, o si necesitas que alguien te lleve,
+      únete al grupo de WhatsApp para coordinar el viaje Santiago → Curicó.
+    </p>
+    <div class="viaje-tags">
+      <span class="viaje-tag">Tengo espacio en mi auto</span>
+      <span class="viaje-tag">Necesito que me lleven</span>
+    </div>
+    <a href="https://chat.whatsapp.com/REEMPLAZAR_CON_TU_LINK" class="btn" target="_blank" rel="noopener">Unirse al grupo de WhatsApp</a>
+  </div>
+</section>
+
 <section id="alojamiento">
   <h2>Dónde quedarse</h2>
   <div class="subtitle">Para invitados de fuera</div>
