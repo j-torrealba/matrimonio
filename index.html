@@ -1382,7 +1382,7 @@
         const cols = parseCsvRow(fila);
         const nombre = cols[idxNombre] || '';
         return { nombre, mesa: cols[idxMesa] || '', _norm: normalizar(nombre) };
-      }).filter(i => i.nombre);
+      }).filter(i => i.nombre && i.mesa);
       loadingEl.textContent = `${invitados.length} invitados registrados · busca tu nombre`;
       buscador.disabled = false;
     } catch (e) {
