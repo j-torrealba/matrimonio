@@ -1335,12 +1335,32 @@
   actualizarCountdown();
   setInterval(actualizarCountdown, 1000);
 
-  // ============ MESAS — carga desde invitados.json ============
-  // invitados.json se genera ejecutando: python3 build_invitados.py
-  // Formato esperado:  [{ "nombre": "Juan Pérez", "mesa": 5 }, ...]
+  // ============ MESAS — carga desde Google Sheet ============
+  // La hoja debe ser pública (Compartir → "Cualquiera con el enlace puede ver")
+  // y tener una fila de encabezados con las columnas "nombre" y "mesa".
+  const SHEET_ID = '1AoJXSMf98n4jAB88EHgjtWJFDyAkCzsPcQ2UMUaTStE'; // reemplazar con el ID de tu Google Sheet
+
   const normalizar = (t) => t.toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .trim().replace(/\s+/g, ' ');
+
+  function parseCsvRow(row) {
+    const result = [];
+    let cur = '', inQuotes = false;
+    for (let i = 0; i < row.length; i++) {
+      const ch = row[i];
+      if (ch === '"') {
+        if (inQuotes && row[i + 1] === '"') { cur += '"'; i++; }
+        else inQuotes = !inQuotes;
+      } else if (ch === ',' && !inQuotes) {
+        result.push(cur.trim()); cur = '';
+      } else {
+        cur += ch;
+      }
+    }
+    result.push(cur.trim());
+    return result;
+  }
 
   const buscador = document.getElementById('buscador-invitado');
   const resultado = document.getElementById('resultado-mesa');
@@ -1349,10 +1369,20 @@
 
   async function cargarInvitados() {
     try {
-      const res = await fetch('invitados.json', { cache: 'no-cache' });
-      if (!res.ok) throw new Error('no json');
-      const data = await res.json();
-      invitados = data.map(i => ({ ...i, _norm: normalizar(i.nombre) }));
+      const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
+      const res = await fetch(url, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('no sheet');
+      const csv = await res.text();
+      const filas = csv.trim().split('\n');
+      const headers = parseCsvRow(filas[0]).map(h => h.toLowerCase());
+      const idxNombre = headers.indexOf('nombre');
+      const idxMesa = headers.indexOf('mesa');
+      if (idxNombre === -1 || idxMesa === -1) throw new Error('columnas no encontradas');
+      invitados = filas.slice(1).filter(f => f.trim()).map(fila => {
+        const cols = parseCsvRow(fila);
+        const nombre = cols[idxNombre] || '';
+        return { nombre, mesa: cols[idxMesa] || '', _norm: normalizar(nombre) };
+      }).filter(i => i.nombre);
       loadingEl.textContent = `${invitados.length} invitados registrados · busca tu nombre`;
       buscador.disabled = false;
     } catch (e) {
@@ -1361,6 +1391,7 @@
     }
   }
   cargarInvitados();
+
 
   buscador.addEventListener('input', (e) => {
     const query = normalizar(e.target.value);
