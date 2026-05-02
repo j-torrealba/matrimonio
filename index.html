@@ -554,7 +554,7 @@
   .regalos-narrativa {
     font-family: var(--sans); font-size: 15px;
     color: var(--texto-suave); text-align: center;
-    max-width: 620px; margin: 0 auto 40px; line-height: 1.7;
+    max-width: 620px; margin: 0 auto 24px; line-height: 1.7;
   }
   .regalos-oracion {
     font-family: var(--serif); font-style: italic;
@@ -742,11 +742,11 @@
 
 <nav>
   <ul>
-    <li><a href="#fiesta">El día</a></li>
     <li><a href="#historia">Historia</a></li>
+    <li><a href="#fiesta">El día</a></li>
     <li><a href="#misa">Misa</a></li>
-    <li><a href="#fotos">Fotos y Video</a></li>
     <li><a href="#regalos">Regalos</a></li>
+    <li><a href="#confirmar">Confirmar</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
 </nav>
@@ -762,6 +762,9 @@
     "Más valen dos que uno solo, pues obtienen mayor ganancia de su esfuerzo. Si atacan a uno, los dos harán frente. La cuerda de tres hilos no es fácil de romper."
     <span class="verse-ref">Ec 4, 9. 12 </span>
   </p>
+  <div style="margin-top: 40px;">
+    <a href="#confirmar" class="btn">Confirmar asistencia</a>
+  </div>
 </header>
 
 <div class="countdown">
@@ -773,45 +776,6 @@
     <div class="countdown-item"><div class="num" id="segundos">--</div><div class="label">Seg.</div></div>
   </div>
 </div>
-
-<!-- ============ FIESTA ============ -->
-<section id="fiesta">
-  <h2>El día</h2>
-  <div class="subtitle">Cronograma y lugar</div>
-  <div class="divider-small"></div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-time">12:30</div>
-      <div class="timeline-title">Ceremonia religiosa</div>
-      <div class="timeline-desc">Iglesia San José de La Matriz</div>
-      <div class="timeline-lugar">Merced 417, Curicó</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">14:30</div>
-      <div class="timeline-title">Cóctel de bienvenida</div>
-      <div class="timeline-desc">Casa Verona</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">15:30</div>
-      <div class="timeline-title">Cóctel extendido</div>
-      <div class="timeline-desc">Casa Verona · mesas y livings</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">17:30</div>
-      <div class="timeline-title">Baile y fiesta</div>
-      <div class="timeline-desc">Casa Verona</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">23:30</div>
-      <div class="timeline-title">Cierre</div>
-      <div class="timeline-desc">Esperamos que se queden hasta el final</div>
-    </div>
-  </div>
-  <div class="cta-wrap cta-wrap-doble">
-    <a href="https://www.google.com/maps/place/Yungay+589,+3341717+Curic%C3%B3,+Maule/@-34.9852254,-71.2407729,18.28z/data=!4m6!3m5!1s0x9664570821fedbef:0x97dba2f6426878f0!8m2!3d-34.9851302!4d-71.2402616!16s%2Fg%2F11vyyc1fc9?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" class="btn btn-outline" target="_blank" rel="noopener">Iglesia · Ver en Maps</a>
-    <a href="https://www.google.com/maps/place/Centro+de+Eventos+CASONA+VERONA/@-35.0340565,-71.2555819,19z/data=!4m12!1m5!3m4!2zMzXCsDAyJzAxLjgiUyA3McKwMTUnMjMuMiJX!8m2!3d-35.0338333!4d-71.2564444!3m5!1s0x9664570018abc601:0x71f38eeb37cf3da6!8m2!3d-35.0340374!4d-71.2542915!16s%2Fg%2F11xs_64nz2?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" class="btn btn-outline" target="_blank" rel="noopener">Casa Verona · Ver en Maps</a>
-  </div>
-</section>
 
 <!-- ============ HISTORIA — Polaroid timeline ============ -->
 <section id="historia" class="wide">
@@ -913,6 +877,133 @@
   <p class="historia-cierre">
     y ahora queremos celebrar con ustedes lo vivido y lo que viene
   </p>
+</section>
+
+<!-- ============ FIESTA ============ -->
+<section id="fiesta">
+  <h2>El día</h2>
+  <div class="subtitle">Cronograma y lugar</div>
+  <div class="divider-small"></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">12:30</div>
+      <div class="timeline-title">Ceremonia religiosa</div>
+      <div class="timeline-desc">Iglesia San José de La Matriz</div>
+      <div class="timeline-lugar">Merced 417, Curicó</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:30</div>
+      <div class="timeline-title">Cóctel de bienvenida</div>
+      <div class="timeline-desc">Casa Verona</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:30</div>
+      <div class="timeline-title">Cóctel extendido</div>
+      <div class="timeline-desc">Casa Verona · mesas y livings</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">17:30</div>
+      <div class="timeline-title">Baile y fiesta</div>
+      <div class="timeline-desc">Casa Verona</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">23:30</div>
+      <div class="timeline-title">Cierre</div>
+      <div class="timeline-desc">Esperamos que se queden hasta el final</div>
+    </div>
+  </div>
+  <div class="cta-wrap cta-wrap-doble">
+    <a href="https://www.google.com/maps/place/Yungay+589,+3341717+Curic%C3%B3,+Maule/@-34.9852254,-71.2407729,18.28z/data=!4m6!3m5!1s0x9664570821fedbef:0x97dba2f6426878f0!8m2!3d-34.9851302!4d-71.2402616!16s%2Fg%2F11vyyc1fc9?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" class="btn btn-outline" target="_blank" rel="noopener">Iglesia · Ver en Maps</a>
+    <a href="https://www.google.com/maps/place/Centro+de+Eventos+CASONA+VERONA/@-35.0340565,-71.2555819,19z/data=!4m12!1m5!3m4!2zMzXCsDAyJzAxLjgiUyA3McKwMTUnMjMuMiJX!8m2!3d-35.0338333!4d-71.2564444!3m5!1s0x9664570018abc601:0x71f38eeb37cf3da6!8m2!3d-35.0340374!4d-71.2542915!16s%2Fg%2F11xs_64nz2?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" class="btn btn-outline" target="_blank" rel="noopener">Casa Verona · Ver en Maps</a>
+  </div>
+</section>
+
+<!-- ============ VIAJE ============ -->
+<section id="viaje" class="narrow">
+  <h2>¿Viajas desde stgo?</h2>
+  <div class="subtitle">Coordina tu viaje con otros invitados</div>
+  <div class="divider-small"></div>
+  <div class="viaje-card">
+    <div class="viaje-icono">
+      <svg xmlns="http://www.w3.org/2000/svg" width="72" height="44" viewBox="0 0 72 44" fill="none">
+        <!-- Carrocería inferior -->
+        <rect x="4" y="24" width="64" height="10" rx="2" fill="var(--azul-muy-claro)" stroke="var(--azul-medio)" stroke-width="1.2"/>
+        <!-- Cabina -->
+        <path d="M16 24 C18 14, 24 10, 30 9 L44 9 C50 9, 54 13, 56 24 Z" fill="var(--blanco)" stroke="var(--azul-medio)" stroke-width="1.2" stroke-linejoin="round"/>
+        <!-- Ventana izquierda -->
+        <path d="M20 23 C21 16, 25 12, 29 11 L36 11 L36 23 Z" fill="var(--azul-muy-claro)" stroke="var(--celeste)" stroke-width="0.8"/>
+        <!-- Ventana derecha -->
+        <path d="M37 11 L44 11 C49 12, 52 16, 53 23 L37 23 Z" fill="var(--azul-muy-claro)" stroke="var(--celeste)" stroke-width="0.8"/>
+        <!-- Separador ventanas -->
+        <line x1="36.5" y1="11" x2="36.5" y2="23" stroke="var(--azul-medio)" stroke-width="0.8"/>
+        <!-- Parabrisas delantero -->
+        <path d="M53 23 C54 17, 56 15, 58 24" fill="var(--azul-muy-claro)" stroke="var(--celeste)" stroke-width="0.8"/>
+        <!-- Bumpers -->
+        <rect x="2" y="29" width="5" height="3" rx="1.5" fill="var(--azul-medio)" opacity="0.4"/>
+        <rect x="65" y="29" width="5" height="3" rx="1.5" fill="var(--azul-medio)" opacity="0.4"/>
+        <!-- Rueda trasera -->
+        <circle cx="18" cy="35" r="7" fill="var(--crema)" stroke="var(--azul-profundo)" stroke-width="1.4"/>
+        <circle cx="18" cy="35" r="4" fill="none" stroke="var(--azul-medio)" stroke-width="1"/>
+        <circle cx="18" cy="35" r="1.5" fill="var(--azul-medio)"/>
+        <!-- Rueda delantera -->
+        <circle cx="54" cy="35" r="7" fill="var(--crema)" stroke="var(--azul-profundo)" stroke-width="1.4"/>
+        <circle cx="54" cy="35" r="4" fill="none" stroke="var(--azul-medio)" stroke-width="1"/>
+        <circle cx="54" cy="35" r="1.5" fill="var(--azul-medio)"/>
+        <!-- Faro trasero -->
+        <rect x="5" y="25" width="5" height="3" rx="1" fill="var(--celeste)" opacity="0.7"/>
+        <!-- Faro delantero -->
+        <rect x="62" y="25" width="5" height="3" rx="1" fill="#f0c040" opacity="0.8"/>
+      </svg>
+    </div>
+    <p>
+      Si viajas en auto y tienes espacio, o si necesitas que alguien te lleve,
+      únete al grupo de WhatsApp para coordinar el viaje Santiago → Curicó.
+    </p>
+    <div class="viaje-tags">
+      <span class="viaje-tag">Tengo espacio en mi auto</span>
+      <span class="viaje-tag">Necesito que me lleven</span>
+    </div>
+    <a href="https://chat.whatsapp.com/REEMPLAZAR_CON_TU_LINK" class="btn" target="_blank" rel="noopener">Unirse al grupo de WhatsApp</a>
+  </div>
+</section>
+
+<!-- ============ ALOJAMIENTO ============ -->
+<section id="alojamiento">
+  <h2>Donde quedarse</h2>
+  <div class="subtitle">Para invitados de fuera</div>
+  <div class="divider-small"></div>
+  <div class="alojamientos">
+    <div class="alojamiento-card">
+      <h3>Villa El Descanso</h3>
+      <div class="distancia">Curicó</div>
+      <p>Excelente opción de alojamiento en Curicó. Si mencionan que vienen por nuestro matrimonio, les aplicarán un descuento especial.</p>
+      <a href="https://www.google.com/maps/place/villa+el+descanso+curico/data=!4m2!3m1!1s0x966457dc6770cdc9:0x770d8a492f758174" target="_blank" rel="noopener">Ver en Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MESAS Y LIVINGS (oculta — quitar style="display:none" para mostrar) ============ -->
+<section id="mesas" class="narrow" style="display:none">
+  <h2>Mesas y Livings</h2>
+  <div class="subtitle">Busca tu nombre</div>
+  <div class="divider-small"></div>
+  <div class="mesas-buscador">
+    <input type="text" id="buscador-invitado" placeholder="Escribe tu nombre..." autocomplete="off" aria-label="Buscar mesa por nombre" disabled>
+    <div class="loading" id="mesas-loading">Cargando lista de invitados…</div>
+    <div class="mesa-resultado" id="resultado-mesa"></div>
+  </div>
+</section>
+
+<!-- ============ FOTOS Y VIDEO (Google Drive) ============ -->
+<section id="fotos" class="narrow">
+  <h2>Fotos y Video</h2>
+  <div class="subtitle">Compartan con nosotros</div>
+  <div class="divider-small"></div>
+  <div class="fotos-cta">
+    <div class="icono">✦</div>
+    <p>Suban sus fotos y videos del día a nuestra carpeta compartida. Nos encantaría revivir cada momento a través de sus ojos.</p>
+    <a href="https://drive.google.com/drive/folders/REEMPLAZAR_CON_ID_DE_CARPETA_DRIVE" class="btn" target="_blank" rel="noopener">Subir fotos a Google Drive</a>
+  </div>
 </section>
 
 <!-- ============ MISA ============ -->
@@ -1122,104 +1213,6 @@
   </div>
 </section>
 
-<!-- ============ MESAS Y LIVINGS (cargada desde invitados.json) ============ -->
-<section id="mesas" class="narrow" style="display:none">
-  <h2>Mesas y Livings</h2>
-  <div class="subtitle">Busca tu nombre</div>
-  <div class="divider-small"></div>
-  <div class="mesas-buscador">
-    <input type="text" id="buscador-invitado" placeholder="Escribe tu nombre..." autocomplete="off" aria-label="Buscar mesa por nombre" disabled>
-    <div class="loading" id="mesas-loading">Cargando lista de invitados…</div>
-    <div class="mesa-resultado" id="resultado-mesa"></div>
-  </div>
-</section>
-
-<!-- ============ ALOJAMIENTO ============ -->
-<section id="viaje" class="narrow">
-  <h2>¿Viajas desde stgo?</h2>
-  <div class="subtitle">Coordina tu viaje con otros invitados</div>
-  <div class="divider-small"></div>
-  <div class="viaje-card">
-    <div class="viaje-icono">
-      <svg xmlns="http://www.w3.org/2000/svg" width="72" height="44" viewBox="0 0 72 44" fill="none">
-        <!-- Carrocería inferior -->
-        <rect x="4" y="24" width="64" height="10" rx="2" fill="var(--azul-muy-claro)" stroke="var(--azul-medio)" stroke-width="1.2"/>
-        <!-- Cabina -->
-        <path d="M16 24 C18 14, 24 10, 30 9 L44 9 C50 9, 54 13, 56 24 Z" fill="var(--blanco)" stroke="var(--azul-medio)" stroke-width="1.2" stroke-linejoin="round"/>
-        <!-- Ventana izquierda -->
-        <path d="M20 23 C21 16, 25 12, 29 11 L36 11 L36 23 Z" fill="var(--azul-muy-claro)" stroke="var(--celeste)" stroke-width="0.8"/>
-        <!-- Ventana derecha -->
-        <path d="M37 11 L44 11 C49 12, 52 16, 53 23 L37 23 Z" fill="var(--azul-muy-claro)" stroke="var(--celeste)" stroke-width="0.8"/>
-        <!-- Separador ventanas -->
-        <line x1="36.5" y1="11" x2="36.5" y2="23" stroke="var(--azul-medio)" stroke-width="0.8"/>
-        <!-- Parabrisas delantero -->
-        <path d="M53 23 C54 17, 56 15, 58 24" fill="var(--azul-muy-claro)" stroke="var(--celeste)" stroke-width="0.8"/>
-        <!-- Bumpers -->
-        <rect x="2" y="29" width="5" height="3" rx="1.5" fill="var(--azul-medio)" opacity="0.4"/>
-        <rect x="65" y="29" width="5" height="3" rx="1.5" fill="var(--azul-medio)" opacity="0.4"/>
-        <!-- Rueda trasera -->
-        <circle cx="18" cy="35" r="7" fill="var(--crema)" stroke="var(--azul-profundo)" stroke-width="1.4"/>
-        <circle cx="18" cy="35" r="4" fill="none" stroke="var(--azul-medio)" stroke-width="1"/>
-        <circle cx="18" cy="35" r="1.5" fill="var(--azul-medio)"/>
-        <!-- Rueda delantera -->
-        <circle cx="54" cy="35" r="7" fill="var(--crema)" stroke="var(--azul-profundo)" stroke-width="1.4"/>
-        <circle cx="54" cy="35" r="4" fill="none" stroke="var(--azul-medio)" stroke-width="1"/>
-        <circle cx="54" cy="35" r="1.5" fill="var(--azul-medio)"/>
-        <!-- Faro trasero -->
-        <rect x="5" y="25" width="5" height="3" rx="1" fill="var(--celeste)" opacity="0.7"/>
-        <!-- Faro delantero -->
-        <rect x="62" y="25" width="5" height="3" rx="1" fill="#f0c040" opacity="0.8"/>
-      </svg>
-    </div>
-    <p>
-      Si viajas en auto y tienes espacio, o si necesitas que alguien te lleve,
-      únete al grupo de WhatsApp para coordinar el viaje Santiago → Curicó.
-    </p>
-    <div class="viaje-tags">
-      <span class="viaje-tag">Tengo espacio en mi auto</span>
-      <span class="viaje-tag">Necesito que me lleven</span>
-    </div>
-    <a href="https://chat.whatsapp.com/REEMPLAZAR_CON_TU_LINK" class="btn" target="_blank" rel="noopener">Unirse al grupo de WhatsApp</a>
-  </div>
-</section>
-
-<section id="alojamiento">
-  <h2>Donde quedarse</h2>
-  <div class="subtitle">Para invitados de fuera</div>
-  <div class="divider-small"></div>
-  <div class="alojamientos">
-    <div class="alojamiento-card">
-      <h3>Villa El Descanso</h3>
-      <div class="distancia">Curicó</div>
-      <p>Excelente opción de alojamiento en Curicó. Si mencionan que vienen por nuestro matrimonio, les aplicarán un descuento especial.</p>
-      <a href="https://www.google.com/maps/place/villa+el+descanso+curico/data=!4m2!3m1!1s0x966457dc6770cdc9:0x770d8a492f758174" target="_blank" rel="noopener">Ver en Google Maps →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOTOS Y VIDEO (Google Drive) ============ -->
-<section id="fotos" class="narrow">
-  <h2>Fotos y Video</h2>
-  <div class="subtitle">Compartan con nosotros</div>
-  <div class="divider-small"></div>
-  <div class="fotos-cta">
-    <div class="icono">✦</div>
-    <p>Suban sus fotos y videos del día a nuestra carpeta compartida. Nos encantaría revivir cada momento a través de sus ojos.</p>
-    <a href="https://drive.google.com/drive/folders/REEMPLAZAR_CON_ID_DE_CARPETA_DRIVE" class="btn" target="_blank" rel="noopener">Subir fotos a Google Drive</a>
-  </div>
-</section>
-
-<!-- ============ DEDICATORIAS (Google Form) ============ -->
-<section id="dedicatorias" class="narrow">
-  <h2>Dedicatorias</h2>
-  <div class="subtitle">Libro de firmas digital</div>
-  <div class="divider-small"></div>
-  <div class="dedicatoria-cta">
-    <p>"Déjennos unas palabras que podamos guardar. Un deseo, un recuerdo, un consejo para esta vida que empezamos."</p>
-    <a href="https://forms.gle/REEMPLAZAR_CON_ID_DEL_FORM" class="btn" target="_blank" rel="noopener">Dejar dedicatoria</a>
-  </div>
-</section>
-
 <!-- ============ REGALOS ============ -->
 <section id="regalos">
   <h2>Regalos</h2>
@@ -1278,6 +1271,20 @@
   </div>
 </section>
 
+<!-- ============ CONFIRMAR ASISTENCIA Y DEDICATORIAS ============ -->
+<section id="confirmar" class="narrow">
+  <h2>Confirmar Asistencia</h2>
+  <div class="subtitle">y Dedicatorias</div>
+  <div class="divider-small"></div>
+  <div class="dedicatoria-cta">
+    <p>"Déjennos unas palabras que podamos guardar. Un deseo, un recuerdo, un consejo para esta vida que empezamos."</p>
+    <div class="cta-wrap-doble">
+      <a href="https://forms.gle/REEMPLAZAR_CON_ID_DEL_FORM" class="btn" target="_blank" rel="noopener">Confirmar asistencia</a>
+      <a href="https://forms.gle/REEMPLAZAR_CON_ID_DEL_FORM" class="btn btn-outline" target="_blank" rel="noopener">Dejar dedicatoria</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section id="faq" class="narrow">
   <h2>Preguntas frecuentes</h2>
@@ -1285,7 +1292,7 @@
   <div class="divider-small"></div>
   <details class="faq-item">
     <summary>¿A qué hora debo llegar?</summary>
-    <div class="respuesta">Les pedimos llegar a la iglesia 15 minutos antes del inicio de la ceremonia, es decir a las [18:45]. La misa comienza en punto.</div>
+    <div class="respuesta">Les pedimos llegar a la iglesia 15 minutos antes del inicio de la ceremonia, es decir a las 12:15. La misa comienza en punto.</div>
   </details>
   <details class="faq-item">
     <summary>¿Hay estacionamiento?</summary>
@@ -1301,7 +1308,7 @@
   </details>
   <details class="faq-item">
     <summary>Soy de fuera de Santiago, ¿dónde me alojo?</summary>
-    <div class="respuesta">En "Dónde quedarse" encontrarás la opción que recomendamos. Si mencionas que vienes por el matrimonio, te aplicarán un descuento.</div>
+    <div class="respuesta">En "Donde quedarse" encontrarás la opción que recomendamos. Si mencionas que vienes por el matrimonio, te aplicarán un descuento.</div>
   </details>
 </section>
 
@@ -1335,10 +1342,10 @@
   // ============ MESAS — carga desde Google Sheet ============
   // La hoja debe ser pública (Compartir → "Cualquiera con el enlace puede ver")
   // y tener una fila de encabezados con las columnas "nombre" y "mesa".
-  const SHEET_ID = '1AoJXSMf98n4jAB88EHgjtWJFDyAkCzsPcQ2UMUaTStE'; // reemplazar con el ID de tu Google Sheet
+  const SHEET_ID = '1AoJXSMf98n4jAB88EHgjtWJFDyAkCzsPcQ2UMUaTStE';
 
   const normalizar = (t) => t.toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
     .trim().replace(/\s+/g, ' ');
 
   function parseCsvRow(row) {
@@ -1388,7 +1395,6 @@
     }
   }
   cargarInvitados();
-
 
   buscador.addEventListener('input', (e) => {
     const query = normalizar(e.target.value);
