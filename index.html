@@ -1425,12 +1425,13 @@
       const headers = parseCsvRow(filas[0]).map(h => h.toLowerCase());
       const idxNombre = headers.indexOf('nombre');
       const idxMesa = headers.indexOf('mesa');
-      if (idxNombre === -1 || idxMesa === -1) throw new Error('columnas no encontradas');
+      const idxLiving = headers.indexOf('living');
+      if (idxNombre === -1 || idxMesa === -1 || idxLiving === -1) throw new Error('columnas no encontradas');
       invitados = filas.slice(1).filter(f => f.trim()).map(fila => {
         const cols = parseCsvRow(fila);
         const nombre = cols[idxNombre] || '';
-        return { nombre, mesa: cols[idxMesa] || '', _norm: normalizar(nombre) };
-      }).filter(i => i.nombre && i.mesa);
+        return { nombre, mesa: cols[idxMesa], living: cols[idxLiving] || '', _norm: normalizar(nombre) };
+      });
       loadingEl.textContent = `${invitados.length} invitados registrados · busca tu nombre`;
       buscador.disabled = false;
     } catch (e) {
@@ -1446,7 +1447,13 @@
     const matches = invitados.filter(i => i._norm.includes(query));
     if (matches.length === 1) {
       const m = matches[0];
-      resultado.innerHTML = `${m.nombre}, estás en la <span class="mesa-num">mesa ${m.mesa}</span>`;
+      if (m.mesa) {
+        resultado.innerHTML = `${m.nombre}, estás en la <span class="mesa-num">mesa ${m.mesa}</span>`;
+      } else if (m.living) {
+        resultado.innerHTML = `${m.nombre}, estás en el <span class="mesa-num">living ${m.living}</span>`;
+      } else {
+        resultado.innerHTML = `${m.nombre}, estás en <span class="mesa-num">living libre</span>`;
+      }
     } else if (matches.length > 1 && matches.length <= 6) {
       const nombres = matches.slice(0, 6).map(m => m.nombre).join(' · ');
       resultado.innerHTML = `<span class="no-encontrado">Varias coincidencias, agrega tu apellido.</span><span class="sugerencia">${nombres}</span>`;
